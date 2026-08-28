@@ -1,0 +1,66 @@
+---
+title: "Configure Article Tags and SEO Settings in Document360"
+sidebarTitle: "Tags & SEO"
+description: "Add tags and configure SEO metadata for your articles and categories to improve discoverability in search and on your knowledge base site."
+---
+
+Tags and SEO settings work together to make your knowledge base content easier to find — both inside your site and in external search engines. Tags let readers filter and browse articles by topic, while SEO metadata tells search engines exactly how to present your content in results pages. Configuring both is a straightforward way to increase the reach and usefulness of your documentation.
+
+<Note>
+  SEO settings in Document360 are applied **per workspace and per language**. If your knowledge base has multiple language versions, you can configure independent SEO titles, meta descriptions, and canonical URLs for each language without them interfering with one another.
+</Note>
+
+## Using tags
+
+Tags are freeform labels you apply to individual articles. Readers on your public knowledge base site can filter search results by tag to quickly narrow down relevant content.
+
+<Steps>
+  <Step title="Open the article">
+    Open any article in the editor.
+  </Step>
+  <Step title="Open the Tags field">
+    In the right-hand panel, locate the **Tags** section.
+  </Step>
+  <Step title="Add a tag">
+    Type a tag name in the input field. If the tag already exists, it appears as a suggestion you can click. If it doesn't exist yet, press **Enter** to create it on the fly and apply it to the article immediately.
+  </Step>
+  <Step title="Add more tags as needed">
+    Repeat the previous step to apply multiple tags to the same article. Each tag appears as a pill beneath the input field. Click the **×** on any pill to remove a tag from the article.
+  </Step>
+</Steps>
+
+## Managing tags
+
+To review and manage all tags across your workspace, go to **Content tools → Tags**. This view lists every tag in use, the number of articles it is applied to, and options to act on each tag.
+
+- **Rename** a tag to update its label everywhere it has been applied without re-tagging individual articles.
+- **Delete** a tag to remove it from every article it was applied to. The articles themselves are unaffected — only the tag association is removed.
+
+Use this view periodically to consolidate duplicate tags (for example, merging `api` and `API` into a single canonical tag) and to remove tags that are no longer relevant.
+
+## Article SEO settings
+
+Each article has its own SEO panel in the editor sidebar. Expand the **SEO** section to configure the following fields:
+
+- **SEO title** — the title that appears in search engine results pages (SERPs). This overrides the article's display title for search engines only. Keep it concise and keyword-focused, typically under 60 characters.
+- **Meta description** — a short summary (ideally **130–160 characters**) shown as the snippet beneath your title in search results. A well-written meta description improves click-through rates even though it does not directly affect ranking.
+- **Canonical URL** — the preferred URL for this content. Set a canonical URL when the same article is syndicated or republished elsewhere to prevent duplicate-content penalties.
+
+<Tip>
+  Use **Eddy AI's SEO description generator** to auto-fill the meta description field. Open the SEO panel, click the AI icon next to the meta description field, and Eddy AI generates a description based on your article content — saving time and ensuring consistent quality across all your articles.
+</Tip>
+
+## Category SEO settings
+
+Category pages are indexed by search engines just like article pages, so it is worth optimizing them too. To set SEO metadata for a category, right-click the category in the Documentation panel (or open its **⋮** menu) and select the SEO settings option. You can configure:
+
+- **SEO title** — the title used for the category landing page in search results.
+- **Meta description** — the snippet shown for the category page in search results.
+
+## Knowledge base site SEO
+
+For site-wide SEO configuration, go to **Settings → Knowledge base site → AI & search optimization (GEO/SEO)**. Here you can manage:
+
+- **Sitemap generation** — automatically generate and submit an XML sitemap so search engines can discover all your articles.
+- **Robots.txt** — control which parts of your knowledge base search engine crawlers can index.
+- **Structured data** — enable schema markup so search engines can display rich results (such as FAQ snippets) for your articles.

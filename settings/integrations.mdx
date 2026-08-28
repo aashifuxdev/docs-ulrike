@@ -1,0 +1,97 @@
+---
+title: "Connect Document360 to Your Existing Tools and Workflows"
+sidebarTitle: "Integrations"
+description: "Integrate Document360 with your support platform, analytics tools, CRM, and communication channels to centralize your documentation workflow."
+---
+
+Document360 integrations let you connect your knowledge base to the tools your team already uses — from support platforms and CRMs to analytics providers and communication channels. By linking Document360 to your existing stack, you reduce context switching, surface the right articles where your team and customers already work, and gain richer insight into how your documentation performs.
+
+## Accessing integrations
+
+All integrations are managed from a single location in the portal. In the left sidebar, navigate to **Connections > Integrations**. Each available integration appears as a tile showing its connection status. Click any tile to open its configuration panel.
+
+## Support platform integrations
+
+Connect Document360 to your customer support platform so agents can find and share knowledge base articles without leaving their helpdesk.
+
+<CardGroup cols={2}>
+  <Card title="Zendesk" icon="headset">
+    Sync Document360 articles as Zendesk Guide articles. Keep your support team's knowledge base in Document360 while automatically publishing content into Zendesk Guide for agent and end-user access.
+  </Card>
+  <Card title="Freshdesk" icon="ticket">
+    Surface Document360 articles directly in the Freshdesk agent sidebar. Agents can search your knowledge base and insert article links into tickets without switching tabs.
+  </Card>
+  <Card title="Intercom" icon="comments">
+    Show Document360 articles inside the Intercom messenger. Readers get instant self-service answers from your knowledge base before they start a conversation with your team.
+  </Card>
+  <Card title="Salesforce" icon="cloud">
+    Link Document360 knowledge base articles to Salesforce cases. Support reps can attach relevant articles directly from the case record to speed up resolution and track article usage.
+  </Card>
+</CardGroup>
+
+## Analytics integrations
+
+Track how readers discover, navigate, and engage with your documentation by connecting Document360 to your analytics platform.
+
+### Google Analytics 4
+
+The Google Analytics 4 (GA4) integration sends page view events, search queries, and article feedback signals to your GA4 property automatically. No custom event configuration is required.
+
+To add GA4:
+
+<Steps>
+  <Step title="Open the integration">
+    Go to **Connections > Integrations > Google Analytics**.
+  </Step>
+  <Step title="Enter your Measurement ID">
+    Paste your GA4 Measurement ID in the format `G-XXXXXXXX`. You can find this in your Google Analytics property under **Admin > Data Streams**.
+  </Step>
+  <Step title="Save">
+    Click **Save**. Document360 begins sending events to GA4 within a few minutes.
+  </Step>
+</Steps>
+
+Once connected, all page views, site search events, and article feedback (thumbs up/down) events are tracked automatically in your GA4 property.
+
+### Google Tag Manager
+
+If you manage your analytics and marketing tags through Google Tag Manager (GTM), you can add your GTM container ID instead of — or alongside — a direct GA4 integration. Navigate to **Connections > Integrations > Google Tag Manager**, enter your container ID (`GTM-XXXXXXX`), and click **Save**.
+
+## Communication integrations
+
+Keep your team informed about documentation activity without requiring them to monitor the portal.
+
+### Slack
+
+The Slack integration delivers notifications to a channel of your choice whenever articles are published, readers submit feedback, or review reminders trigger.
+
+To connect Slack:
+
+<Steps>
+  <Step title="Open the integration">
+    Go to **Connections > Integrations > Slack**.
+  </Step>
+  <Step title="Authorize">
+    Click **Authorize**. You are redirected to Slack's OAuth flow.
+  </Step>
+  <Step title="Select workspace and channel">
+    Choose the Slack workspace and the channel where notifications should be posted.
+  </Step>
+  <Step title="Choose notification types">
+    Select which events trigger a notification: article published, feedback received, or review reminder. Click **Save**.
+  </Step>
+</Steps>
+
+<Tip>
+  Use the Slack integration to post article-published notifications to your support team's channel. When a key troubleshooting article is updated, your agents see the alert immediately and can start directing customers to the latest version right away.
+</Tip>
+
+## CRM and ticketing
+
+Document360 also connects to HubSpot, Jira, and Freshdesk for deeper workflow integration.
+
+- **HubSpot** — link knowledge base articles to HubSpot contact records and deals, and sync reader activity data so your sales and success teams see which documentation a prospect or customer has read.
+- **Jira** — attach Document360 articles to Jira issues. Engineering and product teams can reference relevant documentation directly from their sprint board without leaving Jira.
+- **Freshdesk** — in addition to the agent sidebar widget described above, the Freshdesk integration supports ticket deflection by suggesting matching articles as customers type their support request.
+
+To configure any of these integrations, go to **Connections > Integrations**, select the integration tile, and follow the setup steps in the configuration panel.

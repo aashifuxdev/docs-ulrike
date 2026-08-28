@@ -1,0 +1,73 @@
+---
+title: "Enforce Consistent Writing with the Eddy AI Style Guide"
+sidebarTitle: "Style Guide"
+description: "Define writing rules in Document360's Eddy AI style guide so all AI-generated content follows your brand voice, terminology, and formatting standards."
+---
+
+The Eddy AI style guide gives your team a central place to define the writing standards that every piece of AI-generated content must follow. Instead of manually editing Eddy AI output to match your brand voice or correct terminology, you encode those preferences as rules once — and Eddy AI applies them automatically every time it generates or improves content in your workspace.
+
+## What the style guide does
+
+When Eddy AI generates a new article draft, rewrites a passage, or improves existing text, it checks your style guide rules before producing output. Rules can govern:
+
+- **Preferred terminology** — Specify the exact words and phrases your brand uses and the alternatives to avoid (for example, "workspace" instead of "project folder").
+- **Tone** — Define whether content should be formal, conversational, friendly, or second-person, so every article feels consistent.
+- **Formatting preferences** — Instruct Eddy AI to always use numbered lists for procedures, bullet lists for feature overviews, or specific heading structures.
+- **Words and phrases to avoid** — Prevent Eddy AI from using clichés, jargon, or language that doesn't suit your audience (for example, words like "easy" or "simple" that can frustrate readers who don't find something easy).
+
+## Creating a style guide
+
+<Steps>
+  <Step title="Open Style guide settings">
+    In the portal, go to **Settings** > **AI settings** > **Style guide**.
+  </Step>
+  <Step title="Add a new rule">
+    Click **Add rule**.
+  </Step>
+  <Step title="Choose a rule type">
+    Select one of the available rule types: **Terminology**, **Tone**, **Format**, or **Avoid word/phrase**.
+  </Step>
+  <Step title="Fill in the rule details">
+    Enter the specific instruction for this rule. Be as precise as possible — clear rules produce more consistent results. For terminology rules, enter both the preferred term and the term it replaces. For tone rules, describe the voice you want in plain language.
+  </Step>
+  <Step title="Save the rule">
+    Click **Save**. The rule takes effect immediately for all subsequent Eddy AI operations in the workspace — no restart or re-publish required.
+  </Step>
+</Steps>
+
+## Rule types
+
+The table below shows each rule type and a concrete example to help you get started.
+
+| Rule type | Example |
+|-----------|---------|
+| **Terminology** | Use "workspace" instead of "project folder" |
+| **Tone** | Write in a friendly, second-person voice |
+| **Format** | Always use numbered lists for step-by-step procedures |
+| **Avoid** | Never use "easy" or "simple" |
+
+You can add multiple rules of the same type. For example, you might have a dozen Terminology rules that cover your entire product vocabulary.
+
+## Testing your style guide
+
+After adding rules, verify that Eddy AI is actually following them before relying on the style guide in production.
+
+<Steps>
+  <Step title="Create a test article">
+    Create a new article with a title related to your product or documentation domain.
+  </Step>
+  <Step title="Generate content with Eddy AI">
+    Use **Eddy AI > Generate article** to produce a draft, then run a few **Improve writing** operations on specific passages.
+  </Step>
+  <Step title="Review the output against your rules">
+    Check whether the generated content uses the correct terminology, adopts the right tone, follows your formatting preferences, and avoids the words you've flagged. If a rule isn't being applied consistently, try rephrasing the rule to be more explicit and specific.
+  </Step>
+</Steps>
+
+<Tip>
+  Start with three to five high-impact rules — your core brand terminology and primary tone directive — rather than adding dozens of rules at once. A small set of well-written rules is more effective than a long list of vague or conflicting instructions. Expand your style guide incrementally as you review Eddy AI output over time.
+</Tip>
+
+<Note>
+  Style guide rules are scoped to the workspace where they're created. If you manage multiple workspaces in Document360, each one can have its own distinct writing standards, which is useful when different workspaces serve different brands, audiences, or products.
+</Note>

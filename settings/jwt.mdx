@@ -1,0 +1,94 @@
+---
+title: "Authenticate Readers Seamlessly with JWT in Document360"
+sidebarTitle: "JWT"
+description: "Use JSON Web Tokens to automatically authenticate your customers into your Document360 knowledge base without requiring a separate login."
+---
+
+JSON Web Token (JWT) authentication lets you sign your customers directly into your Document360 knowledge base from within your product — no separate login page required. When a reader clicks "Help" or "Documentation" inside your app, you generate a signed token on your server, append it to the knowledge base URL, and Document360 handles the rest. The reader arrives already authenticated, with no friction.
+
+## What JWT authentication does
+
+With JWT authentication enabled, the flow works as follows:
+
+1. A logged-in user in your application wants to view your knowledge base.
+2. Your server generates a short-lived JWT signed with your Document360 JWT secret.
+3. You redirect the user to your knowledge base URL with the token appended as a query parameter: `?jwt=<token>`.
+4. Document360 validates the token's signature using your shared secret, extracts the reader's identity from the token claims, and automatically creates or updates the reader account.
+5. The reader lands on the knowledge base page already signed in — no login prompt appears.
+
+This approach is ideal for embedding your knowledge base inside a product, a customer portal, or a support widget where your users are already authenticated.
+
+## Enabling JWT
+
+<Steps>
+  <Step title="Open JWT settings">
+    Go to **Settings** → **Users & permissions** → **JWT**.
+  </Step>
+  <Step title="Enable JWT authentication">
+    Toggle **Enable JWT authentication** on.
+  </Step>
+  <Step title="Copy your JWT secret">
+    Document360 displays your JWT secret key. Copy this value and store it securely — you will use it on your server to sign tokens. Treat this secret like a password: never expose it in client-side code or public repositories.
+  </Step>
+</Steps>
+
+## Generating a JWT token
+
+Generate the JWT on your server using any JWT library. Below is an example using Node.js and the `jsonwebtoken` package.
+
+```javascript
+const jwt = require('jsonwebtoken');
+
+// Store your JWT secret in an environment variable — never hardcode it.
+const jwtSecret = process.env.DOCUMENT360_JWT_SECRET;
+
+const payload = {
+  email: 'user@example.com',  // replace with the authenticated user's email
+  name: 'Jane Smith',          // replace with the authenticated user's name
+  // Optional: reader group IDs to assign
+  groups: ['group-id-here']
+};
+
+const token = jwt.sign(payload, jwtSecret, {
+  expiresIn: '1h'
+});
+
+// Redirect user to:
+// https://docs.yourcompany.com/?jwt=<token>
+```
+
+Set the `DOCUMENT360_JWT_SECRET` environment variable on your server to the secret key you copied from Document360 settings. Never hardcode the secret directly in your source code or commit it to version control. Replace the `email` and `name` values with the authenticated user's real details from your own session.
+
+## Passing the token
+
+Append the generated token to your knowledge base URL as a `jwt` query parameter:
+
+```text
+https://docs.yourcompany.com/?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+When the reader opens this URL, Document360:
+
+1. Extracts the `jwt` parameter from the URL.
+2. Verifies the token signature using your shared secret.
+3. Reads the `email` claim to identify the reader.
+4. Creates a new reader account if one does not already exist for that email, or updates the existing account.
+5. Signs the reader in and removes the token from the visible URL.
+
+You can target any page in your knowledge base — just append the `?jwt=` parameter to the specific article or category URL you want the reader to land on.
+
+## Token claims
+
+The following claims are supported in the JWT payload:
+
+| Claim | Required | Description |
+|-------|----------|-------------|
+| `email` | Yes | The reader's email address. Used as the unique identifier — Document360 matches or creates a reader account based on this value. |
+| `name` | No | The reader's display name. Shown in article comments and the readers list in your portal. |
+| `groups` | No | An array of reader group IDs. Document360 assigns the reader to these groups on sign-in, enabling content access control based on your application's user segments. |
+
+You can find reader group IDs in **Settings** → **Users & permissions** → **Readers & groups** → **Groups** by opening the group and copying the ID from the URL.
+
+<Note>
+  JWT tokens expire based on the `expiresIn` value you set when signing them. Generate a fresh token each time you redirect a user to the knowledge base — do not cache or reuse tokens across sessions. A good default expiry is one hour (`1h`), which is long enough for an active reading session but short enough to limit exposure if a token is intercepted.
+</Note>

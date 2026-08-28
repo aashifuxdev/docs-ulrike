@@ -1,0 +1,56 @@
+---
+title: "Security Settings for Your Document360 Knowledge Base"
+sidebarTitle: "Security"
+description: "Configure access control, IP restrictions, password protection, and two-factor authentication for your Document360 portal and knowledge base site."
+---
+
+Document360 gives you multiple layers of security to control who can access your knowledge base and your portal. Whether you're publishing public-facing documentation or locking down an internal knowledge base, the settings described here let you enforce the right level of protection for your content and your team.
+
+## Knowledge base visibility
+
+Go to **Settings** → **Knowledge base site** → **Security** to configure who can view your knowledge base site.
+
+You can choose from three visibility modes:
+
+- **Public** — Anyone on the internet can access your knowledge base without logging in. This is the default setting and the right choice for customer-facing documentation.
+- **Private** — Readers must log in with a reader account to view any content. Use this for internal documentation or customer portals where content should not be publicly indexed.
+- **Password protected** — All visitors are prompted for a single shared password before they can view the knowledge base. This is a lightweight option for teams that need basic protection without managing individual reader accounts.
+
+## IP restriction
+
+Navigate to **Settings** → **Knowledge base site** → **IP restriction** to restrict access to your knowledge base to a specific set of IP addresses or CIDR ranges.
+
+When IP restriction is enabled, only visitors whose IP addresses match your allowlist can load the knowledge base site. All other visitors see an access-denied page. This is particularly useful for internal documentation that should only be accessible from your office network or VPN.
+
+Enter allowed addresses one per line. You can use individual IP addresses or CIDR notation for ranges:
+
+```text
+192.168.1.0/24
+10.0.0.15
+203.0.113.42
+```
+
+The example `192.168.1.0/24` allows all addresses from `192.168.1.0` through `192.168.1.255`.
+
+## Two-factor authentication for team members
+
+Two-factor authentication (2FA) for your portal users — the team members who create and manage content — is configured separately from the reader-facing settings.
+
+Go to **Settings** → **Knowledge base portal** → **Security** to manage 2FA. As an admin, you can:
+
+- **Require 2FA for all team members** — forces every portal user to enroll in 2FA before they can access the portal. Users who have not yet enrolled are prompted to set up an authenticator app on their next login.
+- **Allow optional 2FA** — team members can choose to enable 2FA on their own account profile.
+
+Supported 2FA methods include authenticator apps (TOTP-based, such as Google Authenticator or Authy).
+
+## Content access control
+
+If you have reader accounts enabled, you can go beyond site-level visibility and restrict individual categories or articles to specific reader groups.
+
+Navigate to **Settings** → **Users & permissions** → **Content access** to configure which reader groups can see which parts of your knowledge base. Content that a reader does not have access to can be configured to appear as locked (visible but requiring login/upgrade) or hidden entirely.
+
+This is useful when you have multiple customer tiers — for example, showing advanced documentation only to enterprise customers while keeping standard docs available to all readers.
+
+<Note>
+  IP restriction and password protection apply to the **public knowledge base site** only. They do not affect access to the Document360 portal, where your team creates and manages content. Portal access is controlled separately through team member authentication and 2FA settings.
+</Note>

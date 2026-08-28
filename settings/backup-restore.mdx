@@ -1,0 +1,74 @@
+---
+title: "Back Up and Restore Your Document360 Knowledge Base"
+sidebarTitle: "Backup & Restore"
+description: "Create manual or scheduled backups of your Document360 workspace, download backup files for external storage, and restore content when needed."
+---
+
+Document360's backup and restore feature protects your knowledge base content against accidental deletion, unintended bulk changes, or data loss events. You can create backups on demand at any time, schedule automatic backups on a recurring basis, download backup files for external storage, and restore your workspace from any saved backup.
+
+<Tip>
+  Always create a manual backup before starting a major content migration, restructuring your category hierarchy, or running a bulk import. Having a clean restore point means you can recover quickly if something goes wrong mid-project.
+</Tip>
+
+## Creating a manual backup
+
+<Steps>
+  <Step title="Open Backup & Restore">
+    Go to **Settings > Knowledge base portal > Backup & restore**.
+  </Step>
+  <Step title="Create a backup">
+    Click **Create backup**. A dialog appears asking for a backup name.
+  </Step>
+  <Step title="Name the backup">
+    Enter a descriptive name that will help you identify this backup later — for example, `Pre-restructure 2024-06-01` or `Before v3 launch`. Clear names make it much easier to find the right restore point later.
+  </Step>
+  <Step title="Confirm">
+    Click **Create**. Document360 captures a complete snapshot of the current workspace, including all categories, articles, article versions, settings, and metadata. The backup appears in the list once it is ready.
+  </Step>
+</Steps>
+
+## Scheduling automatic backups
+
+Rather than relying on manual backups alone, you can configure Document360 to back up your workspace automatically on a schedule.
+
+<Steps>
+  <Step title="Open the Schedule tab">
+    Go to **Settings > Knowledge base portal > Backup & restore > Schedule**.
+  </Step>
+  <Step title="Set frequency">
+    Choose **Daily**, **Weekly**, or **Monthly** as the backup frequency. For actively edited knowledge bases, daily backups provide the tightest recovery window.
+  </Step>
+  <Step title="Set retention period">
+    Choose how long backups are retained before they are automatically deleted. Retention periods range from 30 to 365 days depending on your plan.
+  </Step>
+  <Step title="Save">
+    Click **Save schedule**. Automatic backups run in the background at the configured interval without any manual action.
+  </Step>
+</Steps>
+
+## Downloading a backup
+
+You can download any backup as a `.document360` file and store it externally — on a network drive, cloud storage bucket, or local disk — for disaster recovery purposes.
+
+On the **Backup & restore** page, find the backup you want to download in the list and click the **Download** icon next to it. The `.document360` file is saved to your browser's default download location. Keep at least one recent backup stored outside Document360 so you can recover even if the service is temporarily unavailable.
+
+## Restoring from a backup
+
+<Warning>
+  Restoring a backup **overwrites all current articles, categories, and settings** in the workspace with the content from the selected backup. This action cannot be undone. Before restoring, create a fresh manual backup of your current workspace so you have a way to recover the current state if needed.
+</Warning>
+
+<Steps>
+  <Step title="Open the Restore tab">
+    Go to **Settings > Knowledge base portal > Backup & restore > Restore**.
+  </Step>
+  <Step title="Select a backup">
+    Choose a backup from the list of saved backups, or click **Upload** to restore from a `.document360` file you downloaded previously.
+  </Step>
+  <Step title="Start the restore">
+    Click **Restore**. A confirmation dialog summarizes what will be overwritten.
+  </Step>
+  <Step title="Confirm">
+    Click **Confirm** to proceed. Document360 replaces all current workspace content with the content from the selected backup. The restore process runs in the background; you receive a notification when it is complete.
+  </Step>
+</Steps>

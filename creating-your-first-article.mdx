@@ -1,0 +1,77 @@
+---
+title: "Write and Publish Your First Article in Document360"
+sidebarTitle: "First Article"
+description: "Learn how to write, format, and publish a knowledge base article using Document360's block editor, AI writing tools, and review workflow."
+---
+
+Document360's block editor gives you a flexible, distraction-free writing environment that supports rich content — headings, code blocks, images, callouts, embedded files, and more — all from a single interface. Whether you are documenting a new feature, writing an FAQ, or building a step-by-step guide, the editor adapts to your content structure without requiring any HTML or markdown knowledge.
+
+<Tip>
+  Before writing from scratch, check your template library. Go to the **Templates** section in the left sidebar to browse pre-built layouts for release notes, how-to guides, troubleshooting articles, and more. Applying a template gives you a ready-made structure so you can focus on the content itself.
+</Tip>
+
+## Opening the editor
+
+Navigate to **Documentation** in the left sidebar to open the content tree. Click the category where you want to create your article — for example, `Getting Started`. Then click **New Article** in the upper-right corner of the tree panel.
+
+Document360 opens a blank article in the block editor. The editor occupies the main canvas, and a metadata panel sits on the right side of the screen. You will use both areas as you build out your article.
+
+## Structuring your article
+
+A well-structured article is easier to scan and helps readers find answers faster. Follow these steps to build a clear, formatted article from top to bottom.
+
+<Steps>
+  <Step title="Add a title">
+    Click the **Article title** field at the very top of the editor and type a concise, descriptive title. For example: `How to reset your password`. The title becomes the H1 heading on your published page and is also used as the default SEO title, so make it specific and action-oriented.
+  </Step>
+
+  <Step title="Insert heading blocks">
+    Click inside the editor body and press `/` to open the block menu. Select **Heading 2** to insert an H2 block, or **Heading 3** for an H3 sub-section. Use H2 headings for major sections of your article and H3 headings for sub-topics within those sections. Consistent heading levels help both readers and search engines understand your content hierarchy.
+  </Step>
+
+  <Step title="Add text paragraphs">
+    Press **Enter** after any block to create a new paragraph block. Type your body content directly into each paragraph block. You can apply inline formatting — **bold**, *italic*, `inline code`, or hyperlinks — by selecting text and using the inline toolbar that appears above your selection.
+  </Step>
+
+  <Step title="Insert a code block">
+    Press `/` and select **Code block** from the block menu. Paste or type your code sample into the block. Use the language selector in the top-right corner of the block to enable syntax highlighting. For example:
+
+    ```bash
+    curl -X GET "https://api.example.com/v1/articles" \
+      -H "Authorization: Bearer YOUR_API_TOKEN"
+    ```
+
+    Code blocks are rendered in a fixed-width font on your published page and include a one-click copy button for readers.
+  </Step>
+
+  <Step title="Insert an image or file from Drive">
+    Press `/` and select **Image** to embed a visual, or select **File** to attach a downloadable asset. In the file picker that opens, click **Drive** to browse assets already uploaded to your Document360 Drive, or click **Upload** to add a new file from your computer. After selecting an image, add descriptive alt text in the field below the block — this improves accessibility and SEO.
+  </Step>
+</Steps>
+
+## Using Eddy AI to improve your content
+
+Once you have a draft in place, you can use Eddy AI to refine it without leaving the editor. Click the **Eddy AI** button in the editor toolbar — it appears as a sparkle icon near the formatting controls. A side panel opens with several options: you can ask Eddy AI to generate content from a short prompt, expand a selected paragraph into a longer explanation, simplify dense technical language, fix grammar and spelling, or suggest a summary to place at the top of your article.
+
+To improve a specific passage, highlight the text in the editor first, then click the Eddy AI button. Document360 scopes the AI action to your selection. Review the suggestion Eddy AI returns, then click **Insert** to replace your selection or **Discard** to keep your original text. You stay in full control of what goes into the published article.
+
+## Setting article metadata
+
+Metadata helps readers find your article through search and ensures it is indexed correctly by external search engines. Open the **Settings** tab in the right-hand panel to access the following fields:
+
+- **Tags** — Add one or more tags to group this article with related content. Tags appear as filters on your knowledge base site and improve discoverability within Document360's internal search.
+- **SEO title** — Enter a keyword-rich title of 50–60 characters that describes the article for search engines. If you leave this blank, Document360 uses the article title by default.
+- **SEO description** — Write a 120–155 character summary of the article. This text appears as the meta description in search engine results pages.
+- **Article slug** — The slug is the URL-friendly identifier appended to your knowledge base domain. For example, a slug of `reset-password` produces the URL `https://help.example.com/reset-password`. Document360 auto-generates the slug from your article title, but you can edit it here.
+
+<Warning>
+  Changing an article's slug after it has been published breaks any existing links that point to the old URL. If you must rename a slug, go to **Settings → Redirects** and add a redirect from the old path to the new one to preserve incoming traffic and avoid dead links.
+</Warning>
+
+## Saving and publishing
+
+Document360 auto-saves your work as a **Draft** every few seconds, so you never lose progress. A draft is only visible to team members inside the Document360 portal — your readers cannot see it yet.
+
+When your article is ready to go live, click the **Publish** button in the top-right corner of the editor. The article status badge changes from **Draft** to **Published**, and the article becomes immediately accessible on your knowledge base site.
+
+If your workspace has the **Review workflow** feature enabled, clicking **Publish** instead submits the article for review. A designated reviewer receives a notification, approves or requests changes, and then publishes the article on your behalf. Check with your workspace administrator to find out whether a review step applies to your role.

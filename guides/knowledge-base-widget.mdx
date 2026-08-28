@@ -1,0 +1,68 @@
+---
+title: "Embed the Knowledge Base Widget on Your Website or App"
+sidebarTitle: "KB Widget"
+description: "Add Document360's knowledge base widget to your website or product to give users in-context help, search, and Eddy AI chat without leaving the page."
+---
+
+The Document360 knowledge base widget brings your help content directly into your product or website so users can find answers without opening a separate tab or navigating away from what they're doing. A single script tag is all you need to add a fully functional help panel to any web page.
+
+## What the widget does
+
+The widget appears as a floating help button on your page. When a user clicks it, a panel opens with the following features:
+
+- **Full-text search** — Users can search your entire knowledge base and see results instantly, without leaving your product.
+- **Featured and popular articles** — Surface your most important or frequently read articles directly in the widget panel so users find help quickly.
+- **Eddy AI chat** — If you have the Eddy AI chatbot enabled on your project, users can ask questions in natural language and receive AI-generated answers drawn from your knowledge base content.
+
+Users interact with your documentation entirely within the widget panel and never need to leave your product to get help.
+
+## Getting the widget code
+
+<Steps>
+  <Step title="Open widget configuration">
+    Click **Connections** in the left sidebar of the Document360 portal, then select **Knowledge base widget**.
+  </Step>
+  <Step title="Configure appearance">
+    Under the **Configure** tab, set your preferred button position, button color, and button label text.
+  </Step>
+  <Step title="Copy the embed script">
+    Click **Copy** to copy the generated script tag to your clipboard.
+  </Step>
+</Steps>
+
+## Installing the widget
+
+Paste the copied script tag into the HTML of every page where you want the widget to appear. Place it just before the closing `</body>` tag.
+
+```html
+<script
+  type="text/javascript"
+  src="https://cdn.document360.io/static/js/widget.js"
+  data-project-id="YOUR_PROJECT_ID"
+  defer>
+</script>
+```
+
+Replace `YOUR_PROJECT_ID` with the project ID shown in your widget configuration panel. The `defer` attribute ensures the script loads without blocking your page's rendering.
+
+## Customizing the widget
+
+You can adjust the widget's behavior and appearance at any time from **Connections** → **Knowledge base widget**. The available options include:
+
+- **Button position** — Choose between bottom-right and bottom-left placement to fit your page layout.
+- **Button label text** — Set a custom label such as *"Help"* or *"Support"* to match your product's language.
+- **Button icon** — Select from the available icon options to style the help button.
+- **Pre-filter by category** — Restrict the widget to show articles from a specific category, so the content shown is relevant to the page the user is viewing.
+- **Eddy AI chat** — Toggle the AI chat interface on or off depending on your subscription and preference.
+
+<Tip>
+  Use the category pre-filter option to show contextually relevant articles based on where the user is in your product. For example, configure the widget on your billing pages to show only articles from your Billing category, so users immediately see the most relevant help content.
+</Tip>
+
+## Restricting the widget to specific workspaces
+
+If your Document360 project contains multiple workspaces — for example, separate workspaces for different products or regions — you can configure the widget to display content from a specific workspace. Enter the desired **Workspace ID** in the workspace field within the widget settings panel. The widget will then scope all search results and featured articles to that workspace only.
+
+<Note>
+  The widget requires your knowledge base to be publicly accessible, or configured to allow authenticated readers if you are using private or restricted access. If your knowledge base is set to private, ensure your users are authenticated before the widget loads so they can access the content.
+</Note>

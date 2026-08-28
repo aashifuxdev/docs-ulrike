@@ -1,0 +1,56 @@
+---
+title: "Understanding Projects and Workspaces in Document360"
+sidebarTitle: "Projects & Workspaces"
+description: "Learn how Document360 organizes your documentation into projects and workspaces, and when to use each level of the content hierarchy."
+---
+
+Document360 organizes all of your documentation through a two-level hierarchy: **projects** at the top and **workspaces** nested within them. Understanding how these two levels relate to each other helps you plan your knowledge base structure before you start creating content.
+
+## What is a project?
+
+A project is the top-level container in Document360. Everything you create — workspaces, articles, teams, and settings — lives inside a project. Each project comes with its own:
+
+- **Team and user roles** — invite members and assign permissions at the project level.
+- **Billing and plan** — each project is associated with its own subscription.
+- **Knowledge base URL** — your public-facing documentation site is tied to a single project, whether you use a Document360 subdomain or a custom domain.
+- **Integrations and analytics** — all third-party integrations and usage analytics are scoped to the project.
+
+A project maps naturally to an entire product, product suite, or company. If your organization ships two completely separate products with distinct audiences and teams, consider creating a dedicated project for each one.
+
+## What is a workspace?
+
+A workspace lives inside a project and contains its own independent category and article tree. While a project defines the outer boundaries of your knowledge base, workspaces let you partition content within those boundaries without creating a separate project.
+
+Common reasons to use multiple workspaces in a single project include:
+
+- **Audience separation** — maintain one workspace for end users and a second for developers, each with its own navigation, branding, and content.
+- **Language-specific content** — dedicate a workspace to a language region where the content structure itself differs from the default, not just the language of the text.
+- **Product areas** — split a large knowledge base into logical domains (for example, *Billing & Account* vs. *Core Product*) so different authoring teams can own their section independently.
+
+Each workspace has its own settings for visibility, branding, and localization, but all workspaces in a project share the same team and billing configuration.
+
+## How they work together
+
+A single project can contain multiple workspaces, and each workspace can carry multiple language versions of its content. The table below illustrates this hierarchy:
+
+| Level | Example | What it contains |
+|---|---|---|
+| **Project** | Acme Help Center | All workspaces, team, billing, domain |
+| **Workspace** | End User Docs | Category tree, articles, workspace settings |
+| **Language version** | French (fr) | Translated articles within that workspace |
+
+This three-tier model means you can, for example, have an *End User Docs* workspace with English and French versions sitting alongside a *Developer Docs* workspace with English and German versions — all under one project and one subscription.
+
+## Switching workspaces
+
+Use the **project and workspace switcher** in the top-left corner of the Document360 portal to move between workspaces. Click the switcher to open a dropdown listing every workspace in your current project. Select a workspace to load its category tree, articles, and settings in the editor.
+
+If you have access to multiple projects, the same switcher lets you jump between projects. Changes you make in one workspace never affect the content or settings of another workspace in the same project.
+
+<Tip>
+Workspaces are an effective way to manage **product versioning**. Create a workspace named *v1 Docs* and another named *v2 Docs* to maintain fully independent documentation sets for each major release. Readers can be directed to the appropriate workspace URL, and your team can update v2 content without disturbing the stable v1 articles.
+</Tip>
+
+<Note>
+Workspace creation, renaming, and localization settings are all managed under **Settings → Knowledge base portal → Workspace & localization** in the Document360 portal.
+</Note>

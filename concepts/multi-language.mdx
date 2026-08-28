@@ -1,0 +1,75 @@
+---
+title: "Document360 Multi-Language: Translate Your Knowledge Base"
+sidebarTitle: "Multi-Language"
+description: "Create and manage documentation in multiple languages within a single workspace, using built-in Eddy AI-powered translation support."
+---
+
+Document360 lets you publish your knowledge base in multiple languages without duplicating your workspace or managing separate projects. Each workspace supports an unlimited number of language versions, and readers are automatically served the version that matches their preferred language — all from a single, unified content structure.
+
+## Adding a language
+
+Before you can write or translate content in a new language, you need to add that language to your workspace. Follow these steps to get started:
+
+<Steps>
+  <Step title="Open workspace settings">
+    In the Document360 portal, navigate to **Settings → Knowledge base portal → Workspace & localization**.
+  </Step>
+  <Step title="Add a language">
+    Click **Add language** to open the language selector. Browse or search the list of supported languages, then click the language you want to add.
+  </Step>
+  <Step title="Set a default language">
+    Mark one language as the **default language** for the workspace. The default language is what readers see when no language preference can be determined, and it serves as the fallback for any articles that have not yet been translated.
+  </Step>
+</Steps>
+
+You can add as many languages as your plan allows and reorder them at any time from the same settings page.
+
+## Translating articles
+
+Once you have added a language to your workspace, each article in the category tree gains a separate version for that language. To create or edit a translated version of an article:
+
+1. Open the article in the Document360 editor.
+2. Use the **language switcher** in the top bar of the editor to select the target language.
+3. Write or paste the translated content directly into the editor for that language version.
+
+If a reader visits your knowledge base and requests an article that has not been translated into their selected language, Document360 automatically falls back to the **default language** version of that article. This ensures readers always see content rather than a broken page, even when your translation work is still in progress.
+
+## Using Eddy AI for translation
+
+Document360's built-in AI assistant, **Eddy AI**, can accelerate your translation workflow significantly. Instead of translating content manually from scratch, you can use Eddy AI to generate a first-pass translation and then refine it.
+
+To translate an article with Eddy AI:
+
+<Steps>
+  <Step title="Switch to the target language">
+    Open the article and select the target language from the language switcher in the editor top bar.
+  </Step>
+  <Step title="Click Translate">
+    Click the **Translate** button in the editor toolbar. Eddy AI reads the source-language content and generates a translation in the selected target language.
+  </Step>
+  <Step title="Review and publish">
+    Review the AI-generated translation for accuracy, make any necessary edits, and then publish the language version when you are satisfied with the result.
+  </Step>
+</Steps>
+
+Eddy AI translation works best when your source article is finalized. Translating a draft that is still changing can result in extra revision cycles, so aim to run translation after the source content is stable.
+
+## Language URLs
+
+When you add a language to a workspace, Document360 automatically assigns that language a URL prefix derived from its ISO language code. For example:
+
+| Language | URL prefix | Example URL |
+|---|---|---|
+| French | `/fr` | `https://help.example.com/fr/getting-started` |
+| German | `/de` | `https://help.example.com/de/getting-started` |
+| Spanish | `/es` | `https://help.example.com/es/getting-started` |
+
+The prefix is appended immediately after your knowledge base domain, whether you are using a Document360 subdomain or a custom domain. You do not need to configure the URL structure manually — Document360 generates and manages language URLs automatically when the language is added.
+
+<Tip>
+You can configure **article-level fallback behavior** — for example, choosing to hide an article entirely rather than showing the default-language version — in **Settings → Knowledge base portal → Workspace & localization**. Adjust this setting to match your localization policy and avoid surfacing untranslated content to language-specific audiences.
+</Tip>
+
+<Warning>
+Deleting a language version from your workspace is **permanent and irreversible**. All translated articles, their content, and their metadata for that language are removed immediately and cannot be recovered. Export or back up any translations you want to keep before deleting a language from the workspace.
+</Warning>

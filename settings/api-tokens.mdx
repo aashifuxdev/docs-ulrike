@@ -1,0 +1,76 @@
+---
+title: "Create and Manage API Tokens for the Document360 API"
+sidebarTitle: "API Tokens"
+description: "Generate and manage API tokens in Document360 to authenticate your applications and scripts when making calls to the Document360 REST API."
+---
+
+API tokens let you connect external applications, CI/CD pipelines, and custom scripts to your Document360 project. Every call you make to the Document360 REST API must include a valid token, so generating and managing tokens carefully is an important part of keeping your integration secure and reliable.
+
+<Warning>
+  Treat API tokens like passwords. Never commit a token to source code, include it in a public repository, or share it in plain text. Store tokens in environment variables or a dedicated secrets manager such as AWS Secrets Manager, HashiCorp Vault, or your CI platform's secret store.
+</Warning>
+
+## What API tokens are for
+
+Document360 provides a REST API that lets you programmatically manage almost every aspect of your knowledge base — creating and updating articles, managing category structures, querying article analytics, handling team members, and more. API tokens are the credential that proves to the API that your request is authorized. Each token is tied to the team member account that created it and carries that member's permission level.
+
+<Note>
+  API tokens are project-scoped. A single token works across all workspaces within the same Document360 project. You do not need separate tokens for each workspace.
+</Note>
+
+## Creating an API token
+
+<Steps>
+  <Step title="Open API tokens settings">
+    Go to **Settings > Knowledge base portal > API tokens**.
+  </Step>
+  <Step title="Create a new token">
+    Click **New token**. A dialog appears asking for token details.
+  </Step>
+  <Step title="Name the token">
+    Enter a descriptive name that identifies what the token is used for — for example, `GitHub Actions article sync` or `Analytics export script`. A clear name makes it easier to audit and revoke tokens later.
+  </Step>
+  <Step title="Set expiration">
+    Choose whether the token has no expiry or set a specific expiration date. For automation workflows, a no-expiry token is convenient, but a time-limited token reduces risk if it is ever compromised.
+  </Step>
+  <Step title="Generate and copy the token">
+    Click **Generate**. The token value is displayed once. Copy it immediately and store it in your secrets manager — Document360 does not show the full token value again after you close this dialog.
+  </Step>
+</Steps>
+
+## Using the token in requests
+
+Include your API token in the `api_token` request header on every call to the Document360 API. Document360 does not use the standard `Authorization: Bearer` header pattern.
+
+```bash
+curl -X GET \
+  'https://apihub.document360.io/v2/articles' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json'
+```
+
+Replace `YOUR_API_TOKEN` with the token value you copied when generating the token. The base URL for all API v2 endpoints is `https://apihub.document360.io/v2/`. Refer to the [Document360 API reference](https://apidocs.document360.com) for the full list of available endpoints and request schemas.
+
+## Token permissions
+
+API tokens inherit the permission level of the team member who created them. If you generate a token while logged in as an Editor, that token can perform all actions available to Editors but cannot perform operations that require Admin or Owner privileges — such as managing users, changing billing settings, or modifying SSO configuration.
+
+To issue a token with full administrative access, an Admin or Owner must generate it from their own account. Review your team member roles under **Settings > Users & permissions** before deciding which account should own a given token.
+
+## Revoking a token
+
+Revoke a token immediately if it is compromised, no longer needed, or if the team member who created it leaves your organization.
+
+<Steps>
+  <Step title="Open API tokens settings">
+    Go to **Settings > Knowledge base portal > API tokens**.
+  </Step>
+  <Step title="Find the token">
+    Locate the token you want to revoke in the list. Use the token name you set at creation to identify it.
+  </Step>
+  <Step title="Revoke">
+    Click **Revoke** next to the token, then confirm the action. The token stops working immediately — any application or script still using it will receive authentication errors on its next request.
+  </Step>
+</Steps>
+
+After revoking a token, update any applications or scripts that used it with a newly generated replacement token to restore their access.

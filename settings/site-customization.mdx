@@ -1,0 +1,85 @@
+---
+title: "Customize Your Knowledge Base Site Appearance in Document360"
+sidebarTitle: "Site Customization"
+description: "Apply your brand colors, fonts, logo, and layout to your Document360 knowledge base site to create a consistent reader experience."
+---
+
+Your Document360 knowledge base site is the face of your documentation — and it should feel like an extension of your brand. Site customization lets you control every visual aspect of the reader experience, from your logo and color palette to your font choices and page layout, without writing a single line of code.
+
+## Accessing customization settings
+
+Navigate to **Settings** → **Knowledge base site** → **Site customization** to open the visual editor. Changes you save here apply globally across your knowledge base site.
+
+## Branding basics
+
+Establish your visual identity by uploading your logo and defining your core color palette.
+
+**Logo**
+Upload separate logo files for light mode and dark mode so your branding looks correct regardless of which theme a reader uses. Supported formats are PNG, SVG, and JPEG. For best results, use an SVG or a PNG with a transparent background.
+
+**Favicon**
+Upload a 32×32 or 64×64 PNG as your favicon. This appears in browser tabs and bookmarks.
+
+**Colors**
+Set three core colors:
+
+- **Primary color** — used for buttons, active navigation links, and interactive elements.
+- **Accent color** — used for highlights, hover states, and callout borders.
+- **Background color** — the base background of your knowledge base pages.
+
+<Tip>
+  Use your brand's exact hex codes for colors. Enter them directly into the color picker fields (for example, `#0066CC`) to guarantee pixel-perfect matching with your other brand assets.
+</Tip>
+
+## Typography
+
+Choose fonts that match your brand's voice and ensure readability across devices.
+
+- **Heading font** — applied to article titles and section headings (H1–H6).
+- **Body font** — applied to paragraph text, lists, and article body content.
+- **Base font size** — sets the root font size (in pixels) from which all other sizes scale.
+
+Document360 integrates with **Google Fonts**, giving you access to hundreds of typefaces. Select any Google Font from the dropdown, and it loads automatically for your readers with no additional configuration.
+
+## Layout
+
+Control the structure and components that appear on your homepage and article pages.
+
+**Hero section**
+Customize the hero banner at the top of your homepage:
+- Set the hero **title** and **subtitle** text.
+- Toggle the **search bar** visibility in the hero — this is typically the first place readers look for content.
+
+**Homepage layout**
+Choose how categories are presented on your homepage:
+- **Grid** — displays category cards in a responsive multi-column grid.
+- **List** — displays categories as a stacked vertical list with descriptions.
+
+**Article page layout**
+- **Sidebar navigation** — toggle the left-side category tree on article pages. Disabling this creates a more focused reading experience.
+- **Table of contents** — toggle the floating TOC panel on the right side of article pages. The TOC is auto-generated from H2 and H3 headings in each article.
+
+## Navigation
+
+Add links to your header and footer to help readers navigate beyond the knowledge base.
+
+**Header links**
+Add custom links (for example, to your main website, status page, or community forum) that appear in the top navigation bar. You can set links to open in the same tab or a new tab.
+
+**Footer links**
+Add links to legal pages, social profiles, or support resources in the footer.
+
+**Home page destination**
+By default, the knowledge base logo and home icon link to your knowledge base homepage. You can override this to point to any URL — including a specific article — if you want readers to land on a curated starting point.
+
+## Custom CSS
+
+For styling needs beyond the built-in options, use the **Custom CSS** field under **Site customization** → **Advanced**. Any valid CSS you enter here is injected into the `<head>` of every knowledge base page.
+
+<Warning>
+  Incorrect custom CSS can break your site layout or hide content from readers. Always test CSS changes in a staging workspace before applying them to your production knowledge base. Use your browser's developer tools to inspect element selectors before writing rules.
+</Warning>
+
+<Tip>
+  Enable the **Dark mode toggle** option under **Site customization** → **Theme** to let readers switch between light and dark themes. Document360 automatically generates a dark palette from your primary colors, and readers' preferences are saved in their browser.
+</Tip>

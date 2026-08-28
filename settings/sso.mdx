@@ -1,0 +1,90 @@
+---
+title: "Configure Single Sign-On (SSO) for Your Document360 Site"
+sidebarTitle: "SSO"
+description: "Set up SAML 2.0 or OAuth-based SSO so your team members and readers can log in to Document360 with your existing identity provider."
+---
+
+Single Sign-On (SSO) removes the friction of separate credentials for Document360 by letting your team members and readers authenticate through your existing identity provider. With SSO enabled, users click a single "Sign in with [Your IdP]" button and land directly in the portal or knowledge base — no additional password required.
+
+## Supported SSO providers
+
+Document360 supports two standard protocols:
+
+- **SAML 2.0** — the most widely supported enterprise SSO protocol. Compatible with Okta, Azure Active Directory (Entra ID), OneLogin, PingFederate, and any custom SAML 2.0-compliant identity provider.
+- **OAuth 2.0 / OpenID Connect** — commonly used with Google Workspace and social identity providers.
+
+<CardGroup cols={2}>
+  <Card title="Okta" icon="key">
+    Supports both SAML 2.0 and OAuth 2.0. Recommended: use SAML for the most reliable attribute mapping.
+  </Card>
+  <Card title="Azure Active Directory" icon="microsoft">
+    Supports SAML 2.0 and OAuth 2.0 (via the Microsoft identity platform). Works with both portal SSO and reader SSO.
+  </Card>
+  <Card title="Google Workspace" icon="google">
+    Supports OAuth 2.0. Use Google Workspace SSO for reader authentication in Google-centric organizations.
+  </Card>
+  <Card title="OneLogin" icon="lock">
+    Full SAML 2.0 support. Supports group-based attribute mapping for automatic reader group assignment.
+  </Card>
+</CardGroup>
+
+## Configuring SSO for team members (portal users)
+
+SSO for team members controls how your content editors, admins, and other portal users authenticate.
+
+<Steps>
+  <Step title="Open SSO configuration">
+    Go to **Settings** → **Users & permissions** → **SSO configuration** → **Team members** tab.
+  </Step>
+  <Step title="Select your protocol">
+    Choose **SAML** or **OAuth** depending on what your identity provider supports.
+  </Step>
+  <Step title="Enter IdP details">
+    For SAML: paste your **IdP metadata URL** or upload the **IdP metadata XML** file. For OAuth: enter the **Client ID**, **Client Secret**, and **Authorization URL** from your identity provider's application settings.
+  </Step>
+  <Step title="Map attributes">
+    Map the required SAML/OAuth attributes to Document360 fields. At minimum, map **email** and **display name**. See [Attribute mapping](#attribute-mapping) below for details.
+  </Step>
+  <Step title="Save and test">
+    Click **Save**, then click **Test connection**. Document360 opens a test authentication flow in a new window. Verify the test completes successfully before enforcing SSO for all users.
+  </Step>
+</Steps>
+
+## Configuring SSO for readers
+
+Reader SSO controls how customers or end users authenticate to your knowledge base site.
+
+<Steps>
+  <Step title="Open the Readers SSO tab">
+    Go to **Settings** → **Users & permissions** → **SSO configuration** → **Readers** tab.
+  </Step>
+  <Step title="Enable reader SSO">
+    Toggle **Enable SSO for readers** on.
+  </Step>
+  <Step title="Provide IdP details">
+    Enter your identity provider's details using the same process as team member SSO. Reader SSO and team member SSO can use the same or different identity providers.
+  </Step>
+  <Step title="Save">
+    Click **Save**. Readers visiting your knowledge base site are now redirected to your identity provider's login page when they access protected content.
+  </Step>
+</Steps>
+
+## Attribute mapping
+
+Attribute mapping tells Document360 which fields in your IdP's SAML assertion or OAuth token correspond to Document360 user properties.
+
+| IdP Attribute | Document360 Field | Required | Notes |
+|--------------|-------------------|----------|-------|
+| `email` | Email address | Yes | Used as the unique identifier for the user |
+| `displayName` | Display name | Recommended | Shown in comments and user lists |
+| `groups` | Reader group membership | No | Automatically assigns readers to groups based on IdP group values |
+
+Exact attribute names vary by identity provider. Refer to your IdP's documentation for the correct attribute names to use.
+
+<Note>
+  SSO for team members and SSO for readers are configured independently and can use completely different identity providers. For example, you can use Okta for your team's portal access and Azure AD for your customers' reader authentication.
+</Note>
+
+<Warning>
+  Misconfigured SSO can lock all users — including admins — out of the Document360 portal. Always test your SSO configuration using a non-admin account before enabling the **Require SSO for all users** enforcement option. Keep at least one admin account with a direct password as a backup until you have confirmed SSO is working correctly.
+</Warning>

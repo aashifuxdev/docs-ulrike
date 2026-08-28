@@ -1,0 +1,56 @@
+---
+title: "Configure Cookie Consent for Your Document360 Site"
+sidebarTitle: "Cookie Consent"
+description: "Enable and customize the cookie consent banner on your Document360 knowledge base site to comply with GDPR, CCPA, and other privacy regulations."
+---
+
+Privacy regulations such as GDPR and CCPA require websites to inform visitors about cookies and obtain consent before setting non-essential ones. Document360's built-in cookie consent banner makes it straightforward to meet these obligations without integrating a third-party consent management platform.
+
+## Enabling the consent banner
+
+<Steps>
+  <Step title="Open cookie consent settings">
+    Go to **Settings** → **Knowledge base site** → **Cookie consent**.
+  </Step>
+  <Step title="Enable the banner">
+    Toggle **Enable cookie consent banner** to on. The banner will begin appearing at the bottom of your knowledge base site for first-time visitors as soon as you save.
+  </Step>
+</Steps>
+
+The banner is shown once per visitor. After a reader makes their choice (accept or decline), Document360 stores their preference in a strictly necessary cookie and does not show the banner again on subsequent visits.
+
+## Customizing the banner
+
+Tailor the banner text to match your brand voice and legal requirements. The following fields are configurable:
+
+- **Banner title** — a short heading displayed at the top of the consent banner (for example, "We use cookies").
+- **Body text** — a brief explanation of why you use cookies and what they do. Keep this concise and plain-language.
+- **Accept button label** — the label on the acceptance button (default: "Accept all").
+- **Decline button label** — the label on the rejection button (default: "Decline").
+- **Privacy Policy URL** — a link readers can click to read your full privacy policy. This link is embedded in the banner body text.
+
+## Cookie categories
+
+Document360 organizes cookies into three categories, which are presented to readers in the consent banner:
+
+- **Strictly necessary** — always active and cannot be declined. These include session cookies, authentication tokens, and preference storage that the site requires to function correctly.
+- **Analytics** — tracks reader behavior such as page views and search queries. If you have Google Analytics or another analytics integration enabled, those cookies fall into this category. Readers can decline analytics cookies independently.
+- **Functional** — stores optional preferences such as language selection or dark mode. Readers can accept or decline these independently of analytics.
+
+## What happens when a reader declines
+
+When a reader clicks **Decline** or declines specific cookie categories:
+
+- **Analytics cookies are not set**, and any active analytics integration (such as Google Analytics) is not loaded for that reader's session. Their page views and search activity are not tracked.
+- **Strictly necessary cookies are still applied**, because these are required for the site to function and are exempt from consent requirements under most privacy laws.
+- **The reader's decline preference** is itself stored in a strictly necessary cookie so the banner does not re-appear.
+
+If a reader later wishes to change their consent choice, they can do so by clearing their browser cookies, which resets the banner state.
+
+<Note>
+  You are responsible for ensuring your cookie policy accurately describes all cookies set by your knowledge base, including any cookies introduced by third-party integrations such as Google Analytics, Intercom, or Hotjar. Document360's consent banner covers Document360-native cookies, but you must keep your privacy policy up to date as you add or remove integrations.
+</Note>
+
+<Tip>
+  For GDPR compliance, always link to your full Privacy Policy from the cookie banner. Readers have the right to understand exactly what data you collect and how you use it before they consent. Use the **Privacy Policy URL** field to surface this information directly in the banner.
+</Tip>

@@ -1,0 +1,77 @@
+---
+title: "Control Reader Access to Your Document360 Knowledge Base"
+sidebarTitle: "Readers & Access"
+description: "Set up reader accounts, create reader groups, and restrict specific categories or articles to authenticated readers in Document360."
+---
+
+Reader access control lets you decide who can see your knowledge base and which parts of it they can access. You can keep your knowledge base fully public, require readers to log in, or create a tiered experience where different reader segments see different content — all without touching a line of code.
+
+## What are readers?
+
+Readers are the audience of your knowledge base — your customers, end users, or internal staff who consume documentation. Unlike **team members** (who log into the Document360 portal to create and manage content), readers log into the **public knowledge base site** to view articles.
+
+Readers have no editorial access to the Document360 portal. They can only view content that is available to their access level, and — if you enable it — leave comments on articles.
+
+## Enabling reader accounts
+
+By default, your knowledge base can be accessed publicly without an account. To require readers to log in before viewing content:
+
+<Steps>
+  <Step title="Open security settings">
+    Go to **Settings** → **Knowledge base site** → **Security**.
+  </Step>
+  <Step title="Set visibility to Private">
+    Change the visibility mode to **Private**. Readers visiting your knowledge base will now see a login prompt instead of article content.
+  </Step>
+  <Step title="Save your changes">
+    Click **Save**. The change takes effect immediately — unauthenticated visitors are redirected to the login page.
+  </Step>
+</Steps>
+
+## Inviting readers
+
+You can invite specific readers to your private knowledge base by email.
+
+<Steps>
+  <Step title="Open Readers & groups">
+    Go to **Settings** → **Users & permissions** → **Readers & groups**.
+  </Step>
+  <Step title="Invite a reader">
+    Click **Invite reader** and enter the reader's email address.
+  </Step>
+  <Step title="Send the invitation">
+    Click **Send invite**. The reader receives an email with a link to set their password and log into the knowledge base site.
+  </Step>
+</Steps>
+
+Readers you invite appear in the **Readers** list, where you can view their last login date, group membership, and access status.
+
+## Reader groups
+
+Reader groups let you segment your audience so you can control access to content for each segment independently. For example, you might create a "Enterprise Customers" group and an "Free Tier" group.
+
+<Steps>
+  <Step title="Open the Groups tab">
+    Go to **Settings** → **Users & permissions** → **Readers & groups** → **Groups** tab.
+  </Step>
+  <Step title="Create a group">
+    Click **New group**, enter a name for the group, and click **Save**.
+  </Step>
+  <Step title="Add readers to the group">
+    Open the group and add reader members by searching for their email addresses.
+  </Step>
+</Steps>
+
+You can assign a reader to multiple groups. Group membership can also be set automatically via JWT tokens or SSO attribute mapping.
+
+## Content access restrictions
+
+Once you have reader groups set up, you can restrict specific categories or articles so that only readers in designated groups can see them.
+
+Navigate to **Settings** → **Users & permissions** → **Content access**. From here, select any category or article and assign which reader groups are allowed to view it. Readers who are not in the allowed group will see the content as either **locked** (visible but requiring an upgrade or group membership) or **hidden** entirely, depending on how you configure the restriction.
+
+This is ideal for documenting premium features that should only be visible to customers on higher-tier plans.
+
+<Note>
+  If your company uses an identity provider for authentication, you can configure SSO for readers so they authenticate with your existing IdP instead of managing separate reader passwords. See [SSO Configuration](/settings/sso) for setup instructions.
+</Note>

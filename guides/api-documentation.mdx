@@ -1,0 +1,71 @@
+---
+title: "Publish Interactive API Documentation in Document360"
+sidebarTitle: "API Docs"
+description: "Import OpenAPI or Swagger specs to automatically generate interactive API reference pages in Document360, with try-it-out support and code samples."
+---
+
+Document360's API documentation module lets you publish polished, interactive API reference pages alongside your regular knowledge base content. You can generate endpoint pages automatically from an OpenAPI or Swagger spec, write conceptual guides by hand, or combine both approaches in a single API project.
+
+## Importing an OpenAPI spec
+
+<Steps>
+  <Step title="Open API docs">
+    Click **API docs** in the left sidebar of the Document360 portal.
+  </Step>
+  <Step title="Create a new API project">
+    Click **New API project**, enter a name for the project, and confirm.
+  </Step>
+  <Step title="Import your spec">
+    Choose **Import OpenAPI/Swagger**. Either upload a `.json` or `.yaml` spec file from your machine, or paste a publicly accessible URL pointing to the spec.
+  </Step>
+  <Step title="Review generated pages">
+    Document360 automatically generates one page per endpoint from the spec. Review the generated pages to confirm they look correct.
+  </Step>
+  <Step title="Publish">
+    Set the project status to **Published** to make the API reference visible on your knowledge base site.
+  </Step>
+</Steps>
+
+<Note>
+  OpenAPI **2.0 (Swagger)**, **3.0**, and **3.1** formats are all supported. Make sure your spec file is valid before importing to avoid generation errors.
+</Note>
+
+## What gets generated
+
+For each endpoint defined in your spec, Document360 creates a dedicated page containing:
+
+- **Method and path** — For example, `POST /api/v1/users`
+- **Description** — The summary and description fields from your spec
+- **Parameters** — Path, query, header, and request body parameters with types and descriptions
+- **Example request** — An auto-generated code sample showing how to call the endpoint
+- **Example response** — The response schema and example payload defined in the spec
+- **Authentication requirements** — The security schemes applied to the endpoint
+
+Readers can also use the built-in **Try it out** panel to send real requests to your API directly from the documentation page, without leaving the browser.
+
+## Manually writing API pages
+
+In addition to spec-generated pages, you can create handwritten documentation pages inside any API project using the standard article editor. Manual pages are useful for content that does not fit neatly into an endpoint reference, such as:
+
+- **Authentication guides** — Explain how to obtain and use API keys or OAuth tokens
+- **SDK overviews** — Introduce your official client libraries and link to installation instructions
+- **Conceptual explanations** — Describe key concepts like pagination, rate limiting, or webhook delivery
+
+Mix generated and manual pages freely within the same API project to give readers a complete reference experience.
+
+## Versioning API docs
+
+When your API evolves, create a separate API project for each version — for example, one project named **v1** and another named **v2**. Each project can have its own spec, its own set of manual pages, and its own publication status.
+
+On the public knowledge base site, readers can switch between API versions using a version selector that appears in the API docs navigation. This lets you keep older versions accessible while directing new readers to the latest version.
+
+## Authentication documentation
+
+Clear authentication documentation reduces friction for developers integrating with your API. Create a dedicated article — for example, *"Authentication"* or *"Getting your API key"* — and link to it prominently from the top of your API docs index page.
+
+Cover the following in your authentication article:
+
+- The authentication method(s) your API supports (API key, Bearer token, OAuth 2.0, etc.)
+- Where to find or generate credentials in your product
+- How to include credentials in a request header or parameter
+- Token expiry and refresh procedures, if applicable

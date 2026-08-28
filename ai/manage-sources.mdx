@@ -1,0 +1,94 @@
+---
+title: "Add Custom Knowledge Sources for Eddy AI to Reference"
+sidebarTitle: "Manage Sources"
+description: "Upload documents, PDFs, or add URLs as knowledge sources so Eddy AI can reference your external content when answering chatbot questions."
+---
+
+By default, the Eddy AI chatbot draws its answers from your published knowledge base articles. Custom knowledge sources let you go further — you can point Eddy AI at external documents, PDFs, and web pages so the chatbot can reference content that lives outside your knowledge base. This is especially valuable for product manuals, internal policy documents, release notes, or any authoritative material you haven't yet migrated into Document360.
+
+## What are knowledge sources?
+
+Knowledge sources are files or web pages that you add to Eddy AI's index alongside your published articles. Once indexed, the chatbot treats them as first-class references: it searches them when answering reader questions and cites them in responses, just as it would cite a knowledge base article.
+
+Common use cases include:
+
+- **Product documentation** stored as PDFs that isn't yet in Document360
+- **Policy or compliance documents** that are too static to maintain as articles
+- **Marketing or technical web pages** on your public site that provide useful context
+- **Partner or vendor documentation** relevant to your readers' workflows
+
+## Adding a URL source
+
+<Steps>
+  <Step title="Open Manage source">
+    Go to **Settings** > **AI settings** > **Manage source**.
+  </Step>
+  <Step title="Create a new source">
+    Click **New source**.
+  </Step>
+  <Step title="Choose Website URL">
+    Select **Website URL** as the source type.
+  </Step>
+  <Step title="Enter the URL">
+    Paste the full URL of the page you want to index.
+  </Step>
+  <Step title="Set the crawl depth">
+    Choose how far Eddy AI should follow links from the starting URL:
+    - **This page only** — indexes only the exact URL you entered.
+    - **Follow links (N levels)** — crawls and indexes linked pages up to N levels deep from the starting URL.
+  </Step>
+  <Step title="Add the source">
+    Click **Add**. Eddy AI crawls the URL and indexes the page content. Indexing typically completes within a few minutes depending on the size of the page or site.
+  </Step>
+</Steps>
+
+## Adding a document source
+
+<Steps>
+  <Step title="Open Manage source">
+    Go to **Settings** > **AI settings** > **Manage source**.
+  </Step>
+  <Step title="Create a new source">
+    Click **New source**.
+  </Step>
+  <Step title="Choose File upload">
+    Select **File upload** as the source type.
+  </Step>
+  <Step title="Upload your file">
+    Click **Browse** or drag and drop your file into the upload area. Supported formats are **PDF**, **DOCX**, and **TXT**.
+  </Step>
+  <Step title="Add the source">
+    Click **Add**. The file is processed and its content is indexed and made available to the chatbot.
+  </Step>
+</Steps>
+
+## Keeping sources up to date
+
+Stale sources lead to inaccurate chatbot answers, so it's important to keep indexed content current.
+
+- **URL sources** — You can configure a URL source to **auto-refresh** on a recurring schedule. Open the source in Manage source, select **Edit**, and choose a refresh frequency: **Daily**, **Weekly**, or **Monthly**. Eddy AI re-crawls the URL on that schedule and updates its index with any changes.
+- **Document sources** — There is no automatic refresh for uploaded files. When the source document changes, return to Manage source, delete the outdated file, and re-upload the updated version.
+
+## Removing a source
+
+If a source is outdated, no longer relevant, or was added in error, you can remove it from the index.
+
+<Steps>
+  <Step title="Open Manage source">
+    Go to **Settings** > **AI settings** > **Manage source**.
+  </Step>
+  <Step title="Find the source">
+    Locate the source you want to remove in the source list.
+  </Step>
+  <Step title="Delete the source">
+    Click **Delete** next to the source. Confirm the deletion when prompted. The content is removed from Eddy AI's knowledge index and the chatbot will no longer reference it.
+  </Step>
+</Steps>
+
+<Warning>
+  Only add sources that contain accurate, authoritative, and up-to-date information. Incorrect or outdated content in your knowledge sources will cause the chatbot to generate inaccurate answers — and readers may act on that misinformation. Review your sources periodically to ensure they reflect your current product or policies.
+</Warning>
+
+<Note>
+  The **MCP (Model Context Protocol)** integration lets you connect Document360 to external AI tools and agents that support the MCP standard. You can configure MCP access under **Settings** > **AI settings** > **MCP**.
+</Note>

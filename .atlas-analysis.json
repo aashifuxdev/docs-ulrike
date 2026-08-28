@@ -1,0 +1,156 @@
+{
+  "projectType": "saas",
+  "projectName": "Document360",
+  "projectDescription": "Document360 is an AI-powered knowledge base platform that lets teams create, manage, and publish documentation, API docs, and self-service portals for their customers.",
+  "theme": "almond",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "creating-your-first-article"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/projects-workspaces",
+              "concepts/categories-articles",
+              "concepts/multi-language"
+            ]
+          },
+          {
+            "group": "Content Creation",
+            "pages": [
+              "content/editor-overview",
+              "content/templates",
+              "content/variables-snippets",
+              "content/glossary",
+              "content/custom-pages"
+            ]
+          },
+          {
+            "group": "Managing Content",
+            "pages": [
+              "managing/categories",
+              "managing/tags-seo",
+              "managing/article-reviews",
+              "managing/import-export"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/migrate-content",
+              "guides/decision-tree",
+              "guides/api-documentation",
+              "guides/knowledge-base-widget"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "AI Features",
+        "groups": [
+          {
+            "group": "Eddy AI",
+            "pages": [
+              "ai/overview",
+              "ai/chatbot",
+              "ai/content-generation",
+              "ai/style-guide",
+              "ai/manage-sources"
+            ]
+          },
+          {
+            "group": "Analytics",
+            "pages": [
+              "analytics/knowledge-pulse",
+              "analytics/feedback-manager",
+              "analytics/search-insights"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Settings",
+        "groups": [
+          {
+            "group": "Knowledge Base Site",
+            "pages": [
+              "settings/site-customization",
+              "settings/custom-domain",
+              "settings/article-settings",
+              "settings/security",
+              "settings/cookie-consent"
+            ]
+          },
+          {
+            "group": "Users & Permissions",
+            "pages": [
+              "settings/users-groups",
+              "settings/roles-permissions",
+              "settings/readers-access",
+              "settings/sso",
+              "settings/jwt"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "settings/integrations",
+              "settings/extensions",
+              "settings/api-tokens"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "settings/billing",
+              "settings/backup-restore",
+              "settings/team-auditing"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI-powered article creation and chatbot (Eddy AI)",
+    "Multi-workspace and multi-language documentation",
+    "Category and article tree with nested structure",
+    "API documentation module",
+    "Interactive decision tree builder",
+    "Knowledge base site customization and custom domain",
+    "Reader access control and SSO integration",
+    "Content tools: templates, snippets, variables, glossary",
+    "Analytics and knowledge pulse dashboard",
+    "Feedback manager for article-level feedback",
+    "Ticket deflector and smart bars",
+    "Import & export (project and articles)",
+    "Drive for file management",
+    "Integrations and extensions marketplace",
+    "Team auditing and role-based permissions"
+  ],
+  "publicApiSurface": [
+    "POST /articles — create an article",
+    "GET /articles/{articleId} — retrieve an article",
+    "PUT /articles/{articleId} — update an article",
+    "DELETE /articles/{articleId} — delete an article",
+    "GET /categories — list categories",
+    "POST /categories — create a category",
+    "GET /search?query= — search articles",
+    "POST /ai/generate — generate content with Eddy AI",
+    "GET /analytics/knowledge-pulse — retrieve analytics",
+    "GET /users — list team members",
+    "POST /api-tokens — create an API token"
+  ]
+}

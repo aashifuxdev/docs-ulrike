@@ -1,0 +1,69 @@
+---
+title: "Variables and Snippets: Reuse Content Across Articles"
+sidebarTitle: "Variables & Snippets"
+description: "Use Document360 variables for dynamic values and snippets for reusable content blocks, so updates propagate automatically across all articles."
+---
+
+Document360 gives you two tools for reusing content: **variables** for single dynamic values and **snippets** for multi-block reusable sections. Both update automatically across every article that references them — change the source once, and all articles reflect the change instantly.
+
+<Note>
+  Variables and snippets are workspace-specific. They are not shared across workspaces in the same account.
+</Note>
+
+## Variables
+
+A variable is a named placeholder — for example, `{{product_name}}` or `{{current_version}}` — that you define once and insert into any number of articles. Whenever you update the variable's value, Document360 replaces it everywhere it appears throughout the workspace automatically. This makes variables ideal for values that change over time or differ between products, such as version numbers, product names, company names, and pricing figures.
+
+**To create and use a variable:**
+
+<Steps>
+  <Step title="Open Variables">
+    In the left sidebar, click **Content tools**, then select **Variables**.
+  </Step>
+  <Step title="Create a new variable">
+    Click **New variable**. Enter a **Variable name** (no spaces; use underscores) and a **Value** — the text that will appear in published articles.
+  </Step>
+  <Step title="Save the variable">
+    Click **Save**. The variable is now available across the workspace.
+  </Step>
+  <Step title="Insert the variable in an article">
+    In any article, type `{{variable_name}}` using the exact name you assigned. Document360 resolves the placeholder to the live value when the article is rendered.
+  </Step>
+</Steps>
+
+## Snippets
+
+A snippet is a reusable content block — or collection of blocks — that you build once and embed in multiple articles. A snippet can contain paragraphs, callouts, code blocks, tables, or any combination of block types. When you edit the snippet source, every article that embeds it reflects the update automatically, with no need to find and revise each article individually. Snippets are ideal for standard warnings, legal disclaimers, common procedures, and shared reference tables.
+
+**To create and use a snippet:**
+
+<Steps>
+  <Step title="Open Snippets">
+    In the left sidebar, click **Content tools**, then select **Snippets**.
+  </Step>
+  <Step title="Create a new snippet">
+    Click **New snippet**. Give it a recognisable name, then build the content in the block editor exactly as you want it to appear in articles.
+  </Step>
+  <Step title="Save the snippet">
+    Click **Save**. The snippet is now available for insertion across the workspace.
+  </Step>
+  <Step title="Insert the snippet in an article">
+    In any article, type `/snippet` on an empty line, or click the **+** block menu and choose **Snippet**. Search for the snippet by name and select it to embed it in place.
+  </Step>
+</Steps>
+
+## Best use cases
+
+Use the following guide to choose between a variable and a snippet.
+
+| Use case | Recommended |
+|---|---|
+| Single changing value (version number, company name, pricing) | Variable |
+| Short dynamic string used inline within a sentence | Variable |
+| Multi-block reusable section (warning box, standard procedure) | Snippet |
+| Shared reference table or code sample used in many articles | Snippet |
+| Legal disclaimer or compliance notice | Snippet |
+
+<Warning>
+  Deleting a variable or snippet does **not** remove it from articles that already reference it. Instead, the placeholder remains in the article as an unresolved reference, which may display as blank or broken text on the published site. Before deleting, review which articles use the variable or snippet and update or remove those references first.
+</Warning>

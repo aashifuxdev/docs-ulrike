@@ -1,0 +1,71 @@
+---
+title: "Roles and Permissions for Document360 Team Members"
+sidebarTitle: "Roles & Permissions"
+description: "Understand Document360's built-in roles, create custom roles, and assign granular permissions to control what each team member can do in the portal."
+---
+
+Roles are the foundation of access control in Document360. Every team member who has portal access is assigned a role that determines which actions they can take — from writing drafts to managing workspace settings. Document360 ships with five built-in roles and lets you create unlimited custom roles tailored to your team's workflow.
+
+## Built-in roles
+
+Use the table below as a quick reference for what each built-in role can do.
+
+| Role | Can create articles | Can publish | Can manage settings | Can manage users |
+|------|--------------------|-----------|--------------------|-----------------|
+| Owner | Yes | Yes | Yes | Yes |
+| Admin | Yes | Yes | Yes | No (user mgmt only) |
+| Editor | Yes | Yes | No | No |
+| Draft Writer | Yes | No | No | No |
+| Viewer (internal) | No (read only) | No | No | No |
+
+- **Owner** — the workspace creator. Has unrestricted access to all content, settings, billing, and user management. Each workspace has exactly one Owner.
+- **Admin** — manages content, categories, and settings. Admins can invite and remove users but cannot access billing or transfer ownership.
+- **Editor** — the standard role for full-time writers. Editors can create, edit, and publish articles and manage category structure.
+- **Draft Writer** — suited for contributors who submit content for review. Draft Writers can write and edit articles but must hand off to an Editor or Admin for publishing.
+- **Viewer (internal)** — read-only portal access. Useful for stakeholders who need to review content without the ability to make changes.
+
+## Custom roles
+
+When the built-in roles do not match your team's needs, create a custom role with exactly the permissions you require.
+
+<Steps>
+  <Step title="Open Roles & permissions">
+    Go to **Settings** → **Users & permissions** → **Roles & permissions**.
+  </Step>
+  <Step title="Create a new role">
+    Click **New role** and enter a descriptive name for the role (for example, "Technical Writer" or "Localisation Editor").
+  </Step>
+  <Step title="Configure permissions">
+    Toggle individual permissions on or off. Available permissions include:
+    - Create articles
+    - Edit articles
+    - Publish articles
+    - Delete articles
+    - Manage categories
+    - Access analytics
+    - Manage integrations
+    - Manage knowledge base settings
+  </Step>
+  <Step title="Save the role">
+    Click **Save**. The custom role is now available to assign when inviting users or editing an existing user's profile.
+  </Step>
+</Steps>
+
+## Assigning roles
+
+You can assign a role in two ways:
+
+- **At invitation time** — when you invite a new team member (see [Users & Groups](/settings/users-groups)), you select their role before sending the invite.
+- **On an existing user** — open **Settings** → **Users & permissions** → **Users & groups**, find the user, click the options menu, and select **Edit**. Change the role and save.
+
+A user's role change takes effect immediately on their next page load.
+
+## Category-level permissions
+
+Beyond workspace-wide roles, you can restrict which editors can modify articles in a specific category. This is useful when different teams own different sections of your documentation.
+
+To set category-level permissions, open the category in your knowledge base, go to its **Settings** → **Permissions**, and assign the users or groups who are allowed to create and edit articles within that category. Users without category-level access can still read articles in that category based on their workspace role, but they cannot edit them.
+
+<Tip>
+  Create a **Technical Writer** custom role with the **Create articles**, **Edit articles**, and **Publish articles** permissions enabled but all settings and admin permissions disabled. This is the ideal role for contracted or freelance writers who need full content authoring capability without access to your workspace configuration.
+</Tip>

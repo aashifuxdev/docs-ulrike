@@ -1,0 +1,97 @@
+---
+title: "Migrate Your Existing Documentation to Document360"
+sidebarTitle: "Migrate Content"
+description: "Move your existing documentation from Zendesk, Freshdesk, Confluence, or other tools to Document360 using the built-in migration and import tools."
+---
+
+Moving your existing documentation into Document360 is straightforward with the built-in migration tools. Whether you're coming from a dedicated help center platform, a wiki, or a custom website, Document360 provides guided workflows to bring your content across with minimal manual effort.
+
+## Supported migration sources
+
+Document360 supports direct migration from the following platforms:
+
+<CardGroup cols={2}>
+  <Card title="Zendesk Guide" icon="z">
+    Import your Zendesk help center articles, categories, and sections directly using your Zendesk credentials.
+  </Card>
+  <Card title="Freshdesk Solutions" icon="f">
+    Connect your Freshdesk account to pull in solution articles and folder structures.
+  </Card>
+  <Card title="Confluence" icon="c">
+    Migrate Confluence spaces and pages, preserving your page hierarchy where possible.
+  </Card>
+  <Card title="Intercom Articles" icon="comment">
+    Import your Intercom help center articles and collections into Document360.
+  </Card>
+  <Card title="GitBook" icon="book">
+    Bring in GitBook spaces, including nested pages and code blocks.
+  </Card>
+  <Card title="WordPress" icon="w">
+    Migrate WordPress posts and pages, converting them to Document360 articles.
+  </Card>
+  <Card title="Generic HTML/Markdown" icon="file-code">
+    Upload exported HTML or Markdown files from any other source tool.
+  </Card>
+</CardGroup>
+
+## Using the Migrate content tool
+
+The Migrate content tool walks you through a step-by-step process to connect your source platform and import your articles.
+
+<Steps>
+  <Step title="Open migration settings">
+    Go to **Settings** → **Knowledge base portal** → **Migrate content**.
+  </Step>
+  <Step title="Select your source platform">
+    Choose your source platform from the list of supported integrations.
+  </Step>
+  <Step title="Connect your source account or upload files">
+    Depending on the platform, either authenticate with your source account credentials or upload the exported files (for example, a ZIP archive of HTML or Markdown files).
+  </Step>
+  <Step title="Map categories">
+    Document360 displays your source categories and sections. Map each one to an existing or new category in your Document360 workspace.
+  </Step>
+  <Step title="Review content">
+    Preview the articles that will be imported. Deselect any content you do not want to bring across.
+  </Step>
+  <Step title="Run the migration">
+    Click **Migrate** to start the import. Document360 imports all selected content as **draft articles** so you can review and edit each one before publishing.
+  </Step>
+</Steps>
+
+All migrated articles land in Draft status, giving you full control over what goes live and when.
+
+## After migration
+
+Once the migration completes, take the following steps to prepare your content for publication:
+
+- **Review article formatting** — Check that headings, tables, images, and code blocks have transferred correctly. Some rich-text elements may need minor clean-up depending on the source platform.
+- **Add tags and SEO metadata** — Open each article, navigate to the **SEO** tab, and add a meta title, meta description, and relevant tags to improve discoverability.
+- **Set up redirects from old URLs** — To avoid broken links, go to **Settings** → **Knowledge base site** → **Article redirect rules** and create redirect mappings from your old article URLs to their new Document360 URLs.
+- **Publish your articles** — When you are satisfied with each article, change its status from Draft to Published to make it visible on your knowledge base site.
+
+<Tip>
+  Use **Eddy AI** to speed up post-migration clean-up. Open any imported article, select the Eddy AI assistant, and prompt it to reformat, summarize, or improve the content to match your style guide.
+</Tip>
+
+## Manual import
+
+If your source tool is not listed in the Migrate content section, you can still import your content manually.
+
+Export your content from the source tool as Markdown (`.md`) or HTML (`.html`) files, then follow these steps:
+
+<Steps>
+  <Step title="Open Import and export">
+    Go to **Content tools** → **Import & export project** → **Import**.
+  </Step>
+  <Step title="Upload your files">
+    Upload your exported Markdown or HTML files. You can upload individual files or a ZIP archive containing multiple files.
+  </Step>
+  <Step title="Map and review">
+    Assign the imported articles to the appropriate categories in your workspace, then review the content before publishing.
+  </Step>
+</Steps>
+
+<Note>
+  Migration is workspace-specific. If you manage multiple workspaces in Document360, you must run a separate migration for each workspace — content does not carry over between workspaces automatically.
+</Note>

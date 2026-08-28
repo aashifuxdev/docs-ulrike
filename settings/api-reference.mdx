@@ -1,0 +1,206 @@
+---
+title: "Document360 REST API Reference"
+sidebarTitle: "API Reference"
+description: "Explore the Document360 REST API to programmatically manage articles, categories, users, and analytics. Authenticate with your API token."
+---
+
+The Document360 REST API lets you programmatically manage every aspect of your knowledge base — creating and updating articles, organising categories, searching content, and retrieving analytics data. All requests are made to the base URL `https://apihub.document360.io/v2` and authenticated using an API token that you generate inside the Document360 portal.
+
+## Authentication
+
+Every request to the Document360 API must include your API token in the `api_token` request header. Requests made without a valid token receive a `401 Unauthorized` response.
+
+```bash
+curl -X GET \
+  'https://apihub.document360.io/v2/articles' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json'
+```
+
+<Note>
+  Generate your API token at **Settings → Knowledge base portal → API tokens**. Each token can be scoped to specific permissions. Store tokens securely and rotate them if they are ever exposed. See [API Tokens](/settings/api-tokens) for step-by-step instructions.
+</Note>
+
+<Tip>
+  Use the `limit` and `offset` query parameters on all list endpoints to page through large result sets. For example, `?limit=25&offset=50` returns items 51–75.
+</Tip>
+
+## Articles
+
+Articles are the core content unit in Document360. The following endpoints let you list, retrieve, create, update, and delete articles programmatically.
+
+### List articles
+
+Returns a paginated list of articles in a workspace.
+
+```bash
+curl -X GET \
+  'https://apihub.document360.io/v2/articles?workspace_id=YOUR_WORKSPACE_ID&limit=25&offset=0' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json'
+```
+
+| Query parameter | Type | Description |
+|---|---|---|
+| `workspace_id` | string | Filter articles by workspace |
+| `limit` | integer | Number of results to return (default: 25) |
+| `offset` | integer | Number of results to skip for pagination |
+
+### Get a single article
+
+Returns the full content and metadata for a specific article.
+
+```bash
+curl -X GET \
+  'https://apihub.document360.io/v2/articles/{articleId}' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json'
+```
+
+### Create an article
+
+Creates a new article in the specified category and workspace.
+
+```bash
+curl -X POST \
+  'https://apihub.document360.io/v2/articles' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "title": "Getting started with Document360",
+    "content_html": "<p>Welcome to Document360. This article covers the basics.</p>",
+    "category_id": "YOUR_CATEGORY_ID",
+    "workspace_id": "YOUR_WORKSPACE_ID"
+  }'
+```
+
+| Body field | Type | Required | Description |
+|---|---|---|---|
+| `title` | string | ✅ | Article title |
+| `content_html` | string | ✅ | Article body as an HTML string |
+| `category_id` | string | ✅ | ID of the category to place the article in |
+| `workspace_id` | string | ✅ | ID of the target workspace |
+
+### Update an article
+
+Updates the content or metadata of an existing article. Supply only the fields you want to change.
+
+```bash
+curl -X PUT \
+  'https://apihub.document360.io/v2/articles/{articleId}' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "title": "Updated article title",
+    "content_html": "<p>Updated article content.</p>"
+  }'
+```
+
+### Delete an article
+
+Permanently deletes the specified article. This action cannot be undone.
+
+```bash
+curl -X DELETE \
+  'https://apihub.document360.io/v2/articles/{articleId}' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json'
+```
+
+## Categories
+
+Categories organise articles into a navigable hierarchy. Use these endpoints to list existing categories or create new ones.
+
+### List categories
+
+Returns all categories in your knowledge base.
+
+```bash
+curl -X GET \
+  'https://apihub.document360.io/v2/categories' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json'
+```
+
+### Create a category
+
+Creates a new category, optionally nested under a parent category.
+
+```bash
+curl -X POST \
+  'https://apihub.document360.io/v2/categories' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Troubleshooting",
+    "parent_category_id": "OPTIONAL_PARENT_CATEGORY_ID",
+    "workspace_id": "YOUR_WORKSPACE_ID"
+  }'
+```
+
+| Body field | Type | Required | Description |
+|---|---|---|---|
+| `name` | string | ✅ | Display name of the new category |
+| `parent_category_id` | string | ❌ | ID of the parent category (omit to create a top-level category) |
+| `workspace_id` | string | ✅ | ID of the target workspace |
+
+## Search
+
+Search your knowledge base content programmatically using the same engine that powers the reader-facing search.
+
+### Search articles
+
+```bash
+curl -X GET \
+  'https://apihub.document360.io/v2/search?query=reset+password&workspace_id=YOUR_WORKSPACE_ID' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json'
+```
+
+| Query parameter | Type | Description |
+|---|---|---|
+| `query` | string | The search term to look up |
+| `workspace_id` | string | Scope the search to a specific workspace |
+
+## Analytics
+
+Retrieve an analytics summary for your knowledge base programmatically. The response includes the same high-level metrics available in the Knowledge Pulse dashboard.
+
+### Get analytics summary
+
+```bash
+curl -X GET \
+  'https://apihub.document360.io/v2/analytics' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json'
+```
+
+The response includes summary metrics such as total article views, unique visitors, search volume, and average time on page for the default reporting window.
+
+## Users
+
+Manage your Document360 team roster through the API. This is useful for automating user audits or syncing team membership with an external directory.
+
+### List team members
+
+Returns a list of all team members who have access to the Document360 portal.
+
+```bash
+curl -X GET \
+  'https://apihub.document360.io/v2/team/users' \
+  -H 'api_token: YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json'
+```
+
+## Error Responses
+
+The Document360 API uses standard HTTP status codes. When a request fails, the response body contains a machine-readable error code and a human-readable message describing the problem.
+
+| HTTP Status | Meaning |
+|---|---|
+| `400 Bad Request` | Invalid parameters — check your request body or query string |
+| `401 Unauthorized` | Missing or invalid `api_token` header |
+| `403 Forbidden` | The token is valid but lacks permission for this operation |
+| `404 Not Found` | The requested resource does not exist |
+| `429 Too Many Requests` | Rate limit exceeded — slow down and retry after a short delay |
+| `500 Internal Server Error` | An unexpected error occurred on the Document360 server |

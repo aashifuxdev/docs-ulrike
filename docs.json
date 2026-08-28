@@ -1,0 +1,129 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "almond",
+  "name": "Document360",
+  "colors": {
+    "primary": "#ef7025",
+    "light": "#eec9bc",
+    "dark": "#4fa1ab"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "creating-your-first-article"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/projects-workspaces",
+              "concepts/categories-articles",
+              "concepts/multi-language"
+            ]
+          },
+          {
+            "group": "Content Creation",
+            "pages": [
+              "content/editor-overview",
+              "content/templates",
+              "content/variables-snippets",
+              "content/glossary",
+              "content/custom-pages"
+            ]
+          },
+          {
+            "group": "Managing Content",
+            "pages": [
+              "managing/categories",
+              "managing/tags-seo",
+              "managing/article-reviews",
+              "managing/import-export"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/migrate-content",
+              "guides/decision-tree",
+              "guides/api-documentation",
+              "guides/knowledge-base-widget"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "AI Features",
+        "groups": [
+          {
+            "group": "Eddy AI",
+            "pages": [
+              "ai/overview",
+              "ai/chatbot",
+              "ai/content-generation",
+              "ai/style-guide",
+              "ai/manage-sources"
+            ]
+          },
+          {
+            "group": "Analytics",
+            "pages": [
+              "analytics/knowledge-pulse",
+              "analytics/feedback-manager",
+              "analytics/search-insights"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Settings",
+        "groups": [
+          {
+            "group": "Knowledge Base Site",
+            "pages": [
+              "settings/site-customization",
+              "settings/custom-domain",
+              "settings/article-settings",
+              "settings/security",
+              "settings/cookie-consent"
+            ]
+          },
+          {
+            "group": "Users & Permissions",
+            "pages": [
+              "settings/users-groups",
+              "settings/roles-permissions",
+              "settings/readers-access",
+              "settings/sso",
+              "settings/jwt"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "settings/integrations",
+              "settings/extensions",
+              "settings/api-tokens",
+              "settings/api-reference"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "settings/billing",
+              "settings/backup-restore",
+              "settings/team-auditing"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+---
+title: "Add a Custom Domain to Your Document360 Knowledge Base"
+sidebarTitle: "Custom Domain"
+description: "Map your own domain (like docs.yourcompany.com) to your Document360 knowledge base and enable SSL for a fully branded reader experience."
+---
+
+By default, your Document360 knowledge base is hosted on a `*.document360.io` subdomain. Mapping a custom domain — such as `docs.yourcompany.com` — gives your readers a fully branded URL and reinforces trust. Document360 also automatically provisions an SSL certificate so your site is served securely over HTTPS.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- **Access to your domain's DNS settings** through your domain registrar (for example, GoDaddy, Namecheap, Cloudflare, or Route 53). You need permission to create CNAME records.
+- **A subdomain in mind** — Document360 supports subdomains (like `docs.yourcompany.com` or `help.yourcompany.com`). Root apex domains (like `yourcompany.com`) require additional configuration at your registrar and are not recommended.
+
+Document360 works with any domain registrar that supports CNAME records.
+
+## Adding the custom domain
+
+<Steps>
+  <Step title="Open the custom domain settings">
+    Go to **Settings** → **Knowledge base site** → **Custom domain**.
+  </Step>
+  <Step title="Add your domain">
+    Click **Add domain** and enter the full subdomain you want to use (for example, `docs.yourcompany.com`), then click **Next**.
+  </Step>
+  <Step title="Copy the DNS records">
+    Document360 displays the DNS records you need to add at your registrar. Keep this page open — you'll need these values in the next section.
+  </Step>
+</Steps>
+
+## Configuring DNS
+
+Log in to your domain registrar's DNS management console and create a CNAME record using the values provided by Document360. A typical record looks like this:
+
+```text
+Type: CNAME
+Name: docs
+Value: custom.document360.io
+TTL: 3600
+```
+
+- **Name** is the subdomain prefix (just `docs`, not the full `docs.yourcompany.com`).
+- **Value** is the Document360 endpoint shown on your custom domain settings page — copy it exactly.
+- **TTL** of 3600 seconds (one hour) is a safe default; lower values speed up propagation but increase DNS query load.
+
+Save your DNS record and allow time for it to propagate across the internet.
+
+## SSL certificate
+
+Once Document360 detects that your DNS record is pointing correctly, it automatically provisions a free **Let's Encrypt SSL certificate** for your custom domain. You do not need to purchase or upload a certificate manually.
+
+SSL provisioning typically completes within **15–60 minutes** of successful DNS propagation. Until it completes, your custom domain may show a browser security warning — this is normal and resolves on its own.
+
+## Verifying your domain
+
+Return to **Settings** → **Knowledge base site** → **Custom domain** to check your domain status.
+
+- **Pending** — DNS has not yet propagated or Document360 has not detected the CNAME record.
+- **Active** — DNS is confirmed and your knowledge base is live on your custom domain.
+
+Click **Check status** at any time to trigger an immediate re-check rather than waiting for the next automated check.
+
+<Note>
+  Changing your custom domain does not automatically redirect readers from the old URL to the new one. If you previously shared your `*.document360.io` URL with readers, set up redirect rules under **Settings** → **Knowledge base site** → **Redirects** to send traffic from the old address to the new domain.
+</Note>

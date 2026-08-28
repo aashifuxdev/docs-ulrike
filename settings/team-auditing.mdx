@@ -1,0 +1,59 @@
+---
+title: "Track and Review Team Activity in Document360 Audit Logs"
+sidebarTitle: "Team Auditing"
+description: "Review the Document360 audit log to see every action taken by team members — article edits, publishes, setting changes, and user management events."
+---
+
+The Document360 audit log gives Admins and Owners a complete, tamper-evident record of everything that happens inside the portal. Every time a team member creates an article, changes a setting, invites a user, or generates an API token, that action is captured in the log with a timestamp and the actor's identity. Use the audit log for compliance reporting, change investigations, and general team accountability.
+
+<Note>
+  Audit logs are retained for **90 days** on standard plans. Enterprise plans extend retention to **up to 1 year**. If your organization requires longer retention for compliance reasons, export the log regularly and store the CSV files externally.
+</Note>
+
+## Accessing the audit log
+
+Go to **Settings > Knowledge base portal > Team auditing**. The log opens to a chronological list of all recorded actions, with the most recent events at the top. Each entry shows the timestamp, the team member who performed the action, the action type, and the affected resource (for example, the article title or the setting that was changed).
+
+## What is logged
+
+The audit log captures four broad categories of action:
+
+| Action type | Examples |
+|---|---|
+| **Content changes** | Article created, Article published, Article deleted, Category renamed |
+| **Settings changes** | Custom domain added, SSO configured, Integration enabled |
+| **User management** | User invited, Role changed, User removed |
+| **API access** | API token created, API token revoked |
+
+Every entry in these categories includes the name of the team member who performed the action, so you always have a clear chain of accountability.
+
+<Tip>
+  During content reviews, use the audit log to quickly see who last edited an article and when. Filter by the article name or the team member's name to pull up a focused history of changes — this is especially useful when coordinating reviews across a distributed writing team.
+</Tip>
+
+## Filtering the log
+
+The full audit log can grow large quickly on an active team. Use the filter controls at the top of the log to narrow results:
+
+- **Date range** — set a start and end date to view only events that occurred in a specific window.
+- **Team member** — select one or more team members to see only their actions.
+- **Action type** — filter by category (Content changes, Settings changes, User management, API access) to focus on a specific type of event.
+- **Workspace** — if your project contains multiple workspaces, filter to a single workspace to isolate its activity.
+
+Combine multiple filters to investigate a specific incident — for example, filter by a date range and a specific team member to reconstruct what that person did during a particular session.
+
+## Exporting audit logs
+
+To download a copy of the audit log for compliance reporting, external archiving, or review by stakeholders who do not have portal access:
+
+<Steps>
+  <Step title="Apply filters (optional)">
+    Use the filter controls to scope the log to the date range, team members, or action types you want to export. The export includes only the currently filtered view.
+  </Step>
+  <Step title="Export">
+    Click **Export as CSV**. Document360 generates a CSV file containing all visible log entries and downloads it to your browser's default download location.
+  </Step>
+  <Step title="Store externally">
+    Save the CSV to your compliance archive, document management system, or long-term storage location. This is especially important if you are approaching the end of the 90-day retention window on a standard plan.
+  </Step>
+</Steps>

@@ -1,0 +1,82 @@
+---
+title: "Extend Document360 with the Extensions Marketplace"
+sidebarTitle: "Extensions"
+description: "Browse and install third-party extensions from the Document360 marketplace to add new capabilities to your knowledge base portal and site."
+---
+
+The Document360 Extensions Marketplace gives you access to a growing library of add-ons that expand what your knowledge base can do. Whether you need a specialized analytics widget, an additional export format, or a custom content block, the marketplace lets you install new functionality directly into your portal without writing any code.
+
+## What are extensions?
+
+Extensions are modular add-ons built by Document360 and verified third-party developers. They plug into your portal and your public knowledge base site to add capabilities that go beyond the core product. Common extension categories include:
+
+- **Analytics** — custom dashboards, heatmaps, and reader engagement widgets that sit alongside Document360's built-in analytics.
+- **Content** — additional content block types (diagrams, interactive demos, embeddable forms) that you can insert into articles using the editor.
+- **Integrations** — lightweight connectors to niche tools not covered by the main Integrations section.
+- **UI** — theme add-ons, custom navigation components, and accessibility enhancements for your public knowledge base site.
+
+<Note>
+  Extensions can only be installed, configured, and removed by users with the **Admin** or **Owner** role. Editor and Viewer roles cannot access the marketplace.
+</Note>
+
+## Browsing the extensions marketplace
+
+To open the marketplace, go to **Connections > Extensions** in the left sidebar. The marketplace displays all available extensions as tiles. You can browse by category using the filter tabs at the top — **Analytics**, **Content**, **Integrations**, and **UI** — or type a keyword into the search bar to find a specific extension by name or description. Each tile shows the extension name, publisher, a short description, and its installation status.
+
+## Installing an extension
+
+<Steps>
+  <Step title="Find the extension">
+    Browse or search the marketplace at **Connections > Extensions** until you find the extension you want to install.
+  </Step>
+  <Step title="Click Install">
+    Click the **Install** button on the extension tile. A permissions dialog appears listing the data and portal areas the extension requires access to.
+  </Step>
+  <Step title="Review permissions">
+    Read the required permissions carefully. Permissions vary by extension — some need read access to article content, others may request access to analytics data or portal settings.
+  </Step>
+  <Step title="Confirm installation">
+    Click **Confirm**. The extension is installed and appears in your **Installed** tab. Depending on the extension, it may add a new panel to your portal, a new block type in the article editor, or a widget on your knowledge base site.
+  </Step>
+</Steps>
+
+## Configuring an extension
+
+Most extensions expose a settings panel where you can customize their behaviour after installation.
+
+<Steps>
+  <Step title="Open installed extensions">
+    Go to **Connections > Extensions > Installed**.
+  </Step>
+  <Step title="Select the extension">
+    Click the name of the extension you want to configure. The extension's settings panel opens.
+  </Step>
+  <Step title="Adjust settings">
+    Update the available options — these vary by extension and might include API keys for the third-party service, display preferences, or feature toggles.
+  </Step>
+  <Step title="Save">
+    Click **Save** to apply your changes. Changes take effect immediately.
+  </Step>
+</Steps>
+
+## Removing an extension
+
+If you no longer need an extension, you can remove it at any time.
+
+<Steps>
+  <Step title="Open installed extensions">
+    Go to **Connections > Extensions > Installed**.
+  </Step>
+  <Step title="Select the extension">
+    Click the name of the extension you want to remove.
+  </Step>
+  <Step title="Remove">
+    Click **Remove**, then click **Confirm** in the confirmation dialog.
+  </Step>
+</Steps>
+
+The extension is uninstalled and no longer appears in your portal or knowledge base site. Note that any data the extension created or stored — such as analytics records or custom metadata — may be retained in accordance with the extension publisher's data retention policy. Review the extension's documentation if data cleanup is important to you.
+
+<Tip>
+  If you have a specific workflow that no existing extension covers, consider joining the **Document360 Developer Program**. The program gives you access to the extensions SDK, API documentation, and a sandbox environment so you can build and publish your own extension to the marketplace.
+</Tip>

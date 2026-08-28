@@ -1,0 +1,69 @@
+---
+title: "Import and Export Knowledge Base Content in Document360"
+sidebarTitle: "Import & Export"
+description: "Import articles from existing documentation tools or export your knowledge base content from Document360 for backup, migration, or reuse."
+---
+
+Whether you're migrating an existing help center into Document360, backing up your knowledge base before a major restructure, or repurposing content in another tool, the import and export features have you covered. Document360 supports multiple file formats for both importing and exporting individual articles, and provides a dedicated project backup format for moving an entire workspace between accounts.
+
+<Note>
+  If you're migrating from a specific third-party platform such as **Zendesk**, **Freshdesk**, or **Confluence**, use the dedicated migration tool at **Settings → Knowledge base portal → Migrate content**. It provides structured field mapping so your categories, articles, and metadata transfer cleanly without manual cleanup.
+</Note>
+
+## Importing articles
+
+<Steps>
+  <Step title="Navigate to Import & Export">
+    Go to **Content tools → Import & export project** and click the **Import** tab.
+  </Step>
+  <Step title="Choose a file format">
+    Select the file format you're importing: **Word (.docx)**, **Markdown (.md)**, or **HTML (.html)**. You can upload multiple files at once for a bulk import.
+  </Step>
+  <Step title="Upload your files">
+    Drag your files into the upload area or click to browse and select them from your computer.
+  </Step>
+  <Step title="Map files to categories">
+    For each uploaded file, use the dropdown to select the category in your knowledge base where the imported article should appear. If the target category doesn't exist yet, create it in the Documentation panel first.
+  </Step>
+  <Step title="Click Import">
+    Click the **Import** button. Document360 processes each file and creates a draft article for every imported file. After the import completes, use **Eddy AI** to clean up any formatting inconsistencies — especially useful when importing Word documents with complex styles.
+  </Step>
+</Steps>
+
+## Exporting articles
+
+<Steps>
+  <Step title="Navigate to Export articles">
+    Go to **Content tools → Export articles**.
+  </Step>
+  <Step title="Choose a format">
+    Select your desired export format: **PDF**, **Word (.docx)**, **HTML**, or **Markdown (.md)**.
+  </Step>
+  <Step title="Select content to export">
+    Check the categories and individual articles you want to include in the export. You can select your entire knowledge base or a targeted subset.
+  </Step>
+  <Step title="Click Export">
+    Click **Export**. Document360 packages the selected content into a **.zip file** and downloads it to your browser automatically.
+  </Step>
+</Steps>
+
+## Project import/export
+
+Project import/export is designed for migrating an **entire Document360 workspace** — including all categories, articles, settings, and metadata — between two Document360 accounts.
+
+- **Export a project** — go to **Content tools → Import & export project → Export project**. Document360 generates a complete backup file in Document360's native format and downloads it to your computer.
+- **Import a project** — on the target account, go to **Content tools → Import & export project → Import project** and upload the backup file you exported. Document360 restores the full project structure into the workspace.
+
+<Warning>
+  **Project import overwrites existing content in the target workspace.** All current categories, articles, and settings will be replaced by the content in the backup file. Before importing, export a backup of the target workspace so you can restore it if needed.
+</Warning>
+
+## Supported formats
+
+| Format | Import | Export |
+|---|---|---|
+| .docx (Word) | ✅ Yes | ✅ Yes |
+| .md (Markdown) | ✅ Yes | ✅ Yes |
+| .html | ✅ Yes | ✅ Yes |
+| .pdf | ❌ No | ✅ Yes |
+| .zip (Project backup) | ✅ Yes | ✅ Yes |

@@ -1,0 +1,70 @@
+---
+title: "Categories and Articles: Structuring Your Knowledge Base"
+sidebarTitle: "Categories & Articles"
+description: "Understand how Document360 uses categories and articles to organize content into a navigable, SEO-friendly knowledge base structure."
+---
+
+Every workspace in Document360 is organized through a tree of **categories** and **articles**. Categories group related content into sections that readers can browse, while articles hold the actual text, images, and media your audience reads. Designing this tree thoughtfully makes your knowledge base easier to navigate and improves its search engine visibility.
+
+## Categories
+
+A category is a folder-like container that organizes articles into logical sections. On your public knowledge base site, categories render as collapsible sections in the left-hand navigation panel, giving readers a clear map of your content.
+
+Key facts about categories:
+
+- **Nesting depth** — you can nest categories up to **6 levels deep**, allowing fine-grained organization for large documentation sets.
+- **Slugs and SEO** — each category has its own URL slug, which contributes to the breadcrumb path shown to readers and search engines.
+- **Workspace scope** — the category tree belongs to a single workspace and is completely independent from the trees in other workspaces.
+
+The following example shows a two-level category tree for a typical *Getting Started* section:
+
+```text
+Getting Started
+  ├── Overview
+  ├── Installation
+  └── Configuration
+      ├── Environment setup
+      └── Advanced options
+```
+
+In this structure, *Getting Started* is the top-level category. *Configuration* is a subcategory nested one level down, and *Environment setup* and *Advanced options* are nested a second level under *Configuration*.
+
+## Articles
+
+An article is the individual content page that lives inside a category. Each article is the primary unit of information your readers consume and search for. When you create or edit an article in Document360, you work with the following core properties:
+
+| Property | Description |
+|---|---|
+| **Title** | The display name shown in navigation and as the page heading. |
+| **Slug** | The URL-friendly identifier appended to your knowledge base domain. |
+| **Content blocks** | Rich text, code samples, images, videos, callouts, and more. |
+| **Tags** | Keywords that improve internal search discoverability. |
+| **SEO metadata** | Custom meta title and meta description for search engine optimization. |
+
+## Page categories
+
+A **page category** is a special type of content node that turns a category itself into a browsable landing page. Instead of showing readers an empty folder when they click a category, a page category lets you add an introductory paragraph, a summary table, or links to child articles directly on the category node.
+
+Use page categories to orient readers at the start of a major section — for example, a *Getting Started* page category might explain what the section covers and link to the most important articles within it.
+
+## Ordering content
+
+You control the order of both categories and articles using **drag-and-drop** in the Documentation panel of the Document360 editor. Click and hold any category or article in the tree, then drag it to the desired position. You can also drag items into a different parent category to reorganize your structure without recreating content.
+
+The order you set in the editor is exactly what readers see in the left navigation of the public site, so arrange content in the sequence that best supports a first-time reader moving through your documentation.
+
+## Article states
+
+Every article in Document360 moves through a publishing lifecycle. The current state of an article controls whether readers can see it on your public site.
+
+| State | Meaning |
+|---|---|
+| **Draft** | The article is saved in the editor but is not visible to readers on the public site. |
+| **Published** | The article is live and accessible to anyone who can view your knowledge base. |
+| **Review** | The article has been submitted to the review workflow and is awaiting approval before publishing. |
+
+You can see and filter articles by state from the Documentation panel, making it straightforward to track which content is ready to go live and which is still in progress.
+
+<Note>
+The category tree is **workspace-specific**. Each workspace in your project maintains its own independent tree of categories and articles. Adding, moving, or deleting a category in one workspace has no effect on the trees in other workspaces within the same project.
+</Note>
